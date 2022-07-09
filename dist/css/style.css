@@ -496,6 +496,9 @@ body {
 .section_teachers {
   padding: 114px 0 100px;
 }
+.section_questions {
+  padding: 0 0 167px;
+}
 
 .color {
   font-weight: 700;
@@ -923,6 +926,74 @@ body {
   right: 74px;
   width: 254;
   z-index: 4;
+}
+
+/* Спойлеры */
+.spoiler {
+  margin-bottom: 20px;
+  border: 1px solid #dde9f0;
+  filter: drop-shadow(0px 5px 20px rgba(47, 72, 89, 0.7));
+  border-radius: 50px;
+}
+.spoiler:last-child {
+  margin-bottom: 0;
+}
+.spoiler__top {
+  padding: 27px 17px 31px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.spoiler__name {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 140%;
+  color: #006eb8;
+}
+.spoiler__btn {
+  transform: rotate(0);
+  transition: transform 0.3s ease-in;
+  width: 70px;
+  border-radius: 50%;
+  background-color: rgba(0, 110, 184, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 70px;
+}
+.spoiler__btn::before, .spoiler__btn::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 6px;
+  background: #006EB8;
+  border-radius: 2px;
+}
+.spoiler__btn::after {
+  transform: rotate(90deg) translateX(-6px);
+}
+.spoiler__bottom {
+  padding: 0 17px 0 48px;
+  max-height: 0;
+  transform: translateY(-10%);
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease-in-out;
+}
+.spoiler_open .spoiler__bottom {
+  max-height: initial;
+  transform: translateY(0);
+  overflow: visible;
+  opacity: 1;
+  padding-bottom: 30px;
+}
+.spoiler_open .spoiler__btn {
+  transform: rotate(180deg);
+}
+.spoiler_open .spoiler__btn::after {
+  opacity: 0;
 }
 
 /* Подвал */
