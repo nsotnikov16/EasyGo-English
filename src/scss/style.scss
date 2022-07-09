@@ -1,0 +1,56 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url(../fonts/#{$file_name}.woff2) format("woff2"),
+      url(../fonts/#{$file_name}.woff) format("woff");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+
+$main: #e5e5e5;
+
+@import "fonts";
+
+@import "normalize";
+
+body {
+  font-family: "Gotham Pro";
+}
+.page {
+  color: $main;
+  overflow: hidden;
+  /* background-color: $main; */
+
+  &__container {
+    margin: 0 auto;
+    max-width: 1170px;
+
+    @media (max-width: 1310px) {
+      padding: 0 30px;
+    }
+    @media (max-width: 767px) {
+      padding: 0 15px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 54px;
+    line-height: 140%;
+    color: #fff;
+  }
+}
+
+/* Контент */
+@import "content";
+
+/* Прочее */
+@import "other";
+
+/* Шапка */
+@import "header";
+
+/* Подвал */
+@import "footer";
