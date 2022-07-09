@@ -1,0 +1,69 @@
+.lesson {
+  margin-bottom: 123px;
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    background: #eb4961;
+    border-radius: 19px;
+  }
+
+  &__left {
+    max-width: 710px;
+    padding: 112px 0 107px 90px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 130%;
+    /* or 104px */
+
+    color: #ffffff;
+    margin-bottom: 28px;
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 150%;
+    /* or 36px */
+
+    color: #ffffff;
+    margin-bottom: 40px;
+    max-width: 476px;
+  }
+
+  &__right {
+    position: relative;
+    img {
+      position: absolute;
+
+      &:nth-child(1) {
+        top: 74px;
+        right: 112px;
+        z-index: 3;
+      }
+      &:nth-child(2) {
+        right: 0;
+        bottom: 0;
+      }
+      &:nth-child(3) {
+        bottom: 120px;
+        right: 390px;
+        width: 241px;
+        z-index: 4;
+      }
+      &:nth-child(4) {
+        top: 74px;
+        right: 74px;
+        width: 254;
+        z-index: 4;
+      }
+    }
+  }
+}
+.btn {
+  &_white {
+  }
+}

@@ -74,6 +74,10 @@
   &_white {
     color: $main;
     background-color: white;
+    &:hover {
+      background: #FFB547 !important;
+      color: white;
+    }
   }
 
   &:hover {
