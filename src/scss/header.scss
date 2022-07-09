@@ -1,0 +1,19 @@
+.header {
+  padding: 55px 0 24px;
+  &__container {
+    display: grid;
+    grid-template-columns: 180px max-content max-content;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__contacts {
+    display: flex;
+    align-items: center;
+    .phone {
+      margin-right: 19px;
+    }
+  }
+}
+
+

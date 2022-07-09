@@ -1,0 +1,46 @@
+.banner {
+  padding: 105px 0 0;
+  position: relative;
+  &__title {
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 120%;
+    margin-bottom: 28px;
+    max-width: 815px;
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    line-height: 150%;
+    margin-bottom: 29px;
+    max-width: 506px;
+  }
+
+  .swiper-wrapper {
+    padding-bottom: 185px;
+  }
+
+  .swiper-pagination {
+    bottom: 20px;
+  }
+  .swiper-pagination-bullet {
+    width: 17px;
+    height: 17px;
+    background: #006eb8;
+    margin-right: 27px !important;
+    margin-left: 0 !important;
+    &:last-child {
+      margin-right: 0;
+    }
+    &-active {
+      background-image: url(../img/bullet.svg);
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-color: transparent;
+    }
+  }
+
+  > * {
+    user-select: none;
+  }
+}

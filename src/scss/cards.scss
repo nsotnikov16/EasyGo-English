@@ -1,0 +1,82 @@
+.card {
+  background: #ffffff;
+  border: 1px solid #dde9f0;
+  box-shadow: 0px 10px 60px rgba(47, 72, 89, 0.12);
+  border-radius: 15px;
+  padding: 79px 21px 54px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__top {
+    margin-bottom: 21px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 150%;
+    color: #006eb8;
+    margin-bottom: 13px;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    line-height: 150%;
+    margin-bottom: 9px;
+    max-width: 391px;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__info {
+    margin-bottom: 21px;
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 180%;
+  }
+
+  .signup {
+    width: 250px;
+    button {
+    }
+  }
+
+  &_teacher {
+    padding: 65px 40px 50px 50px;
+    .card__title {
+      font-size: 36px;
+      line-height: 38px;
+      text-align: center;
+      margin-bottom: 26px;
+    }
+
+    .card__subtitle {
+      margin-top: 19px;
+      text-align: center;
+      font-size: 24px;
+      line-height: 38px;
+      max-width: 100%;
+    }
+  }
+}
+.cards {
+  margin-top: 62px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  gap: 30px;
+  &__card {
+  }
+
+  &_teachers {
+    grid-template-columns: 1fr 1fr;
+    gap: 110px;
+  }
+}

@@ -9,14 +9,14 @@
   }
 }
 
-$main: #e5e5e5;
+$main: #0a0a0b;
 
 @import "fonts";
 
 @import "normalize";
 
 body {
-  font-family: "Gotham Pro";
+  font-family: "Jost";
 }
 .page {
   color: $main;
@@ -25,7 +25,7 @@ body {
 
   &__container {
     margin: 0 auto;
-    max-width: 1170px;
+    max-width: 1530px;
 
     @media (max-width: 1310px) {
       padding: 0 30px;
@@ -49,8 +49,20 @@ body {
 /* Прочее */
 @import "other";
 
+/* Меню */
+@import "menu";
+
 /* Шапка */
 @import "header";
+
+/* Изображения */
+@import "images";
+
+/* Баннер */
+@import "banner";
+
+/* Карточки */
+@import 'cards';
 
 /* Подвал */
 @import "footer";

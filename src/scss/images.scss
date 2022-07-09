@@ -1,0 +1,36 @@
+.images {
+  img {
+    position: absolute;
+  }
+
+  &__girl {
+    top: 56px;
+    right: 508px;
+    border-radius: 50%;
+  }
+
+  &__teacher {
+    right: 0;
+    top: -30px;
+  }
+
+  &__boy {
+    bottom: 50px;
+    right: 255px;
+  }
+
+  &__bird-blue {
+    top: 24px;
+    right: 520px;
+  }
+
+  &__bird-red {
+    right: 467px;
+    bottom: 285px;
+  }
+
+  &__bird-blue-right {
+    right: -60px;
+    bottom: 290px;
+  }
+}

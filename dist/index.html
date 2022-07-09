@@ -7,787 +7,395 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="css/style.css">
-	<script src="https://api-maps.yandex.ru/2.1/?apikey=f9ebcc43-ca68-4256-a481-ec6d67357bde&lang=ru_RU"
-		type="text/javascript"></script>
-	<title>Нико-Медиа</title>
+	<title>EasyGo English</title>
 </head>
 
 <body>
 	<div class="page">
-		<div class="background">
-			<header class="header">
-				<div class="page__container">
-					<p class="header__location">
-						<svg>
-							<use href="./img/icons/icons.svg#map"></use>
-						</svg>
-						Сочи
-					</p>
-					<a href="tel:+73462550877" class="phone">
-						<svg>
-							<use href="./img/icons/icons.svg#phone"></use>
-						</svg>
-						<span>+7 (3462) 550-877</span>
-					</a>
-					<a href="/" class="logo"></a>
-					<a href="./cart.html" class="header__cart">
-						<svg>
-							<use href="./img/icons/icons.svg#cart"></use>
-						</svg>
-						<span>Корзина</span>
-						<div class="header__cart-count">2</div>
-					</a>
-				</div>
-			</header>
-
-			<div class="banner">
-    <div class="page__container">
-        <h1 class="page__title">Реклама на билбордах в Сочи от 12 000 ₽</h1>
-        <div class="banner__list">
-
-            <li>
-                <span>Конструкций</span>
-                <span>28 шт.</span>
-            </li>
-            <li>
-                <span>Средняя стоимоcть</span>
-                <span>27 000 ₽</span>
-            </li>
-            <li>
-                <span>Горящих предложений</span>
-                <span>10 шт.</span>
-            </li>
+		<!-- Шапка -->
+		<header class="header background-gray">
+    <div class="page__container header__container">
+        <div href="/" class="logo"></div>
+        <nav class="menu">
+            <a href="" class="menu__item">О школе</a>
+            <a href="" class="menu__item">Школьникам</a>
+            <a href="" class="menu__item">Взрослым</a>
+            <a href="" class="menu__item">Отзывы</a>
+        </nav>
+        <div class="header__contacts">
+            <a href="tel:+79226569961" class="phone">+7 922 656 99 61</a>
+            <button class="btn" data-socials="bottom">Бесплатное занятие</button>
         </div>
-        <a href="#maps" class="banner__button">
-            <svg>
-                <use href="./img/icons/icons.svg#location"></use>
-            </svg>
-            Выбрать билборд на карте
-        </a>
+    </div>
+</header>
+
+		<!-- Баннер -->
+		<div class="banner background-gray">
+    <div class="images">
+        <img src="./img/banner/girl.png" class="images__girl">
+        <img src="./img/banner/teacher.png" class="images__teacher">
+        <img src="./img/banner/boy.png" class="images__boy">
+        <img src="./img/bird-blue.svg" class="images__bird-blue">
+        <img src="./img/bird-red.svg" class="images__bird-red">
+        <img src="./img/bird-blue.svg" class="images__bird-blue-right">
+    </div>
+    <div class="page__container">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <h2 class="banner__title">Английский для детей и подростков</h2>
+                    <p class="banner__subtitle">Подтянем успеваемость в школе, увеличим словарный запас, научим
+                        свободно выражать мысли на английском языке</p>
+                    <div class="signup">
+                        <button class="btn" data-socials="top">Записаться</button>
+                        <img class="free" src="./img/free.png" alt="Free">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <h2 class="banner__title">Подготовим ребёнка к ОГЭ и ЕГЭ</h2>
+                    <p class="banner__subtitle">Разберём подводные камни экзамена, дадим пошаговую инструкцию
+                        для успешной сдачи экзамена</p>
+                    <div class="signup">
+                        <button class="btn" data-socials="top">Записаться</button>
+                        <img class="free" src="./img/free.png" alt="Free">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <h2 class="banner__title">Курсы английского для взрослых</h2>
+                    <p class="banner__subtitle">Улучшим уровень вашего языка, выучим английский для конкретных
+                        жизненных задач</p>
+                    <div class="signup">
+                        <button class="btn" data-socials="top">Записаться</button>
+                        <img class="free" src="./img/free.png" alt="Free">
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+
+        </div>
     </div>
 </div>
 
-		</div>
-		<section class="section hot pb0">
-    <div class="page__container">
-        <h2 class="section__title">Горящие предложения</h2>
-        <p class="section__subtitle hot__subtitle background-gray">
-            Для Вас мы подобрали <b class="color">10 конструкций</b> с <b class="color">самой большой
-                скидкой</b>.<br>
-            Спрос на такие конструкции высокий, поэтому в свободном статусе они находятся не долго.
-            <b class="color">Бронируйте места</b> заранее, при этом все детали можно обсудить с менеджером в
-            личной
-            беседе
-        </p>
-        <div class="hot__gallery-container">
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper hot__gallery">
-
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="hot__item">
-                            <div class="sale sale_icon hot__sale">-25%</div>
-                            <div class="hot__top">
-                                <a href="" class="hot__img">
-                                    <img src="./img/hot/1.png" alt="Hot1">
-                                </a>
-                                <a href="" class="hot__title">Центральная магистраль, 25. СОК «Звёздный»</a>
-                            </div>
-                            <div class="prices hot__prices">
-                                <p class="price price_old">25 000 ₽</p>
-                                <p class="price">19 000 ₽</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="hot__item">
-                            <div class="sale sale_icon hot__sale">-20%</div>
-                            <div class="hot__top">
-                                <a href="" class="hot__img">
-                                    <img src="./img/hot/2.png" alt="Hot1">
-                                </a>
-                                <a href="" class="hot__title">Центральная магистраль, 25. СОК «Звёздный»</a>
-                            </div>
-                            <div class="prices hot__prices">
-                                <p class="price price_old">23 000 ₽</p>
-                                <p class="price">17 500 ₽</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="hot__item">
-                            <div class="sale sale_icon hot__sale">-25%</div>
-                            <div class="hot__top">
-                                <a href="" class="hot__img">
-                                    <img src="./img/hot/3.png" alt="Hot1">
-                                </a>
-                                <a href="" class="hot__title">Центральная магистраль, 25. СОК «Звёздный»</a>
-                            </div>
-                            <div class="prices hot__prices">
-                                <p class="price price_old">25 500 ₽</p>
-                                <p class="price">19 500 ₽</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="hot__item">
-                            <div class="sale sale_icon hot__sale">-25%</div>
-                            <div class="hot__top">
-                                <a href="" class="hot__img">
-                                    <img src="./img/hot/4.png" alt="Hot1">
-                                </a>
-                                <a href="#" class="hot__title">Центральная магистраль, 25. СОК «Звёздный»</a>
-                            </div>
-                            <div class="prices hot__prices">
-                                <p class="price price_old">24 700 ₽</p>
-                                <p class="price">19 000 ₽</p>
-                            </div>
-                        </div>
-                    </div>
+		<!-- Кто мы? -->
+		<section class="section section_about">
+    <div class="page__container section__col2">
+        <div class="section__left">
+            <h2 class="section__title">Кто мы?</h2>
+            <div class="section__text content">
+                <p>
+                    Привет! Наша цель - научить вас говорить на английском языке.
+                </p>
+                <p>Мы стараемся делать это легко и интересно, потому-что только так можно выучить иностранный
+                    язык.
+                </p>
+                <p>
+                    Для этого на уроках мы воспроизводим ситуации из реальной жизни, обсуждаем интересные для
+                    детей,
+                    подростков или взрослых новости, учимся общаться так, как это делают настоящие англичане в
+                    повседневной жизни.
+                </p>
+                <p class="color">Учим не для галочки, а на результат! </p>
+            </div>
+        </div>
+        <div class="section__right content">
+            <div class="about-video">
+                <div>
+                    <button></button>
                 </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-scrollbar"></div>
+                <p><span class="color">Посмотрите</span><br>за 2 минуты просто и ясно, как мы обучаем</p>
             </div>
         </div>
     </div>
 </section>
 
-		<section class="section">
-			<div class="page__container">
-				<h2 class="section__title">Рекламные щиты</h2>
-				<p class="section__subtitle">Подберите нужную Вам поверхность сами, или с помощью наших менеджеров:
-					подскажем оптимальный вариант для решения ваших задач. Поможем с дизайном, составим медиаплан,
-					спрогнозируем рекламный охват. Обращайтесь, поможем!</p>
-			</div>
-			<div class="filter background-gray">
+		<!-- Курсы для школьников -->
+		<section class="section section_school background-gray">
     <div class="page__container">
-        <div class="filter__container">
-            <div class="filter__item filter__item_format">
-                <h3 class="filter__item-name">Формат наружной рекламы</h3>
-                <button type="button" class="filter__item-reset">Сбросить</button>
-                <div class="select filter__select">
-                    <div class="select__btn">
-                        <span class="select__choose-text">Выберите формат</span>
-                        <ul class="select__choose swiper ">
-                            <div class="swiper-wrapper">
-                                <li class="swiper-slide">Рекламный щит</li>
-                                <li class="swiper-slide">Светодиодный экран</li>
-                                <li class="swiper-slide">Рекламный щит</li>
-                                <li class="swiper-slide">Светодиодный экран</li>
-                            </div>
-                        </ul>
-                        <div class="select__arrow"></div>
+        <div class="section__col2">
+            <div class="section__left">
+                <h2 class="section__title">Курсы для школьников</h2>
+                <div class="section__text content">
+                    <p>Перед началом обучения мы проводим тестирование ребёнка и общаемся с ним. Это позволяет
+                        выявить его уровень английского и понять, в какой группе ему будет комфортнее и
+                        эффективнее учиться. Первый урок - всегда бесплатный. Приходите, посмотрите всё своими
+                        глазами, посетите наш урок, чтобы принять решение</p>
+                </div>
+            </div>
+            <div class="section__right">
+                <div class="school-images">
+                    <img src="./img/bird-red.svg">
+                    <img src="./img/bird-blue.svg">
+                </div>
+            </div>
+        </div>
+        <ul class="cards cards_courses">
+            <li class="card ">
+                <div class="card__top">
+                    <h3 class="card__title">Подготовка<br> к ОГЭ и ЕГЭ</h3>
+                    <p class="card__subtitle">Боишься экзаменов? Чувствуешь неуверенность в своих силах? Есть
+                        пробелы в знаниях, а времени до экзамена все меньше?
+                    </p>
+                    <a href="#" class="more">Подробнее</a>
+                </div>
+                <div class="card__bottom">
+                    <div class="card__info content">
+                        <p>8 занятий в месяц по 60 минут</p>
+                        <p class="card__price">5500 руб / мес</p>
+                        <p>687 руб / занятие</p>
                     </div>
-                    <ul class="select__points swiper swip1">
-
-                        <li class="select__point">
-                            <input id="format1" type="checkbox" name="format">
-                            <label for="format1">Рекламный щит</label>
-                        </li>
-                        <li class="select__point">
-                            <input id="format2" type="checkbox" name="format">
-                            <label for="format2">Светодиодный экран</label>
-                        </li>
-                        <li class="select__point">
-                            <input id="format3" type="checkbox" name="format">
-                            <label for="format3">Светодиодный экран</label>
-                        </li>
-                        <li class="select__point">
-                            <input id="format4" type="checkbox" name="format">
-                            <label for="format4">Рекламный щит</label>
-                        </li>
-                        <li class="select__point">
-                            <input id="format5" type="checkbox" name="format">
-                            <label for="format5">Светодиодный экран</label>
-                        </li>
-
-                    </ul>
+                    <div class="signup">
+                        <button class="btn" data-socials="top">Записаться</button>
+                        <img class="free" src="./img/free.png" alt="Free">
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="filter__item filter__item_month">
-            <h3 class="filter__item-name">Месяц аренды</h3>
-            <button type="button" class="filter__item-reset">Сбросить</button>
-            <div class="select filter__select">
-                <div class="select__btn">
-                    <span class="select__choose-text">Выберите месяц</span>
-                    <ul class="select__choose">
-                        <li>Март</li>
-                        <li>Апрель</li>
-                        <li>Май</li>
-                        <li>Июнь</li>
-                    </ul>
-                    <div class="select__arrow"></div>
-                </div>
-                <ul class="select__points">
-                    <li class="select__point">
-                        <input id="month1" type="checkbox" name="month">
-                        <label for="month1">Март</label>
-                    </li>
-                    <li class="select__point">
-                        <input id="month2" type="checkbox" name="month">
-                        <label for="month2">Апрель</label>
-                    </li>
-                    <li class="select__point">
-                        <input id="month3" type="checkbox" name="month">
-                        <label for="month3">Май</label>
-                    </li>
-                    <li class="select__point">
-                        <input id="month4" type="checkbox" name="month">
-                        <label for="month4">Июнь</label>
-                    </li>
-                    <li class="select__point">
-                        <input id="month5" type="checkbox" name="month">
-                        <label for="month5">Июль</label>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="filter__item filter__item_sale">
-            <input id="sale" type="radio" name="sale">
-            <label for="sale1"></label>
-        </div>
-    </div>
-</div>
-</div>
 
-			<div class="map" id="map" style="height: 600px;"></div>
-			<div class="page__container">
-
-
-    <table class="table">
-        <tr>
-            <th></th>
-            <th><a href="" class="table__sort table__sort_choice">Адрес РК</a></th>
-            <th><a href="" class="table__sort">Формат</a></th>
-            <th><a href="" class="table__sort">Сторона</a></th>
-            <th><a href="" class="table__sort">Статус</a></th>
-            <th><a href="" class="table__sort">Цена, ₽/мес</a></th>
-            <th></th>
-        </tr>
-        <tr>
-            <td>
-                <div class="table__img">
-                    <img src="./img/hot/2.png" alt="Image">
-                </div>
-            </td>
-            <td>
-                <h3 class="table__address">МКАД 19 км+230м Внешняя сторона, №569</h3>
-                <a href="" class="table__location">
-                    <svg>
-                        <use href="./img/icons/icons.svg#location"></use>
-                    </svg>
-                    <span>на карте</span>
-                </a>
-            </td>
-            <td>
-                <p class="table__format">Суперсайт
-                    5х15 м</p>
-            </td>
-            <td>
-                <p class="table__side">А</p>
-            </td>
-            <td>
-                <ul class="months table__months">
-                    <li class="months__item months__item_free">
-                        <input id="item1" type="checkbox" name="months_1455-А">
-                        <label for="item1">фев <span class="percent">%</span></label>
-                    </li>
-                    <li class="months__item months__item_busy">
-                        <input id="item2" type="checkbox" name="months_1455-А" disabled>
-                        <label for="item2">мар</label>
-                    </li>
-                    <li class="months__item months__item_busy">
-                        <input id="item3" type="checkbox" name="months_1455-А" disabled>
-                        <label for="item3">апр</label>
-                    </li>
-                    <li class="months__item months__item_free">
-                        <input id="item4" type="checkbox" checked name="months_1455-А">
-                        <label for="item4">июн</label>
-                    </li>
-                    <li class="months__item months__item_req">
-                        <input id="item5" type="checkbox" checked name="months_1455-А">
-                        <label for="item5">июл</label>
-                    </li>
-                    <li class="months__item months__item_req">
-                        <input id="item6" type="checkbox" name="months_1455-А">
-                        <label for="item6">авг</label>
-                    </li>
-                </ul>
-            </td>
-            <td>
-                <div class="prices table__prices">
-                    <p class="price price_old">24 700 ₽
-                        <span class="sale">-25%</span>
+            </li>
+            <li class="card ">
+                <div class="card__top">
+                    <h3 class="card__title">Учимся читать <br>6 - 7 лет</h3>
+                    <p class="card__subtitle">Боишься экзаменов? Чувствуешь неуверенность в своих силах? Есть
+                        пробелы в знаниях, а времени до экзамена все меньше?
                     </p>
-                    <p class="price">19 000 ₽</p>
+                    <a href="#" class="more">Подробнее</a>
                 </div>
-            </td>
-            <td>
-                <button class="btn btn_red table__btn">В корзину</button>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <div class="table__img">
-                    <img src="./img/hot/2.png" alt="Image">
+                <div class="card__bottom">
+                    <div class="card__info content">
+                        <p>8 занятий в месяц по 60 минут</p>
+                        <p class="card__price">5500 руб / мес</p>
+                        <p>687 руб / занятие</p>
+                    </div>
+                    <div class="signup">
+                        <button class="btn" data-socials="top">Записаться</button>
+                        <img class="free" src="./img/free.png" alt="Free">
+                    </div>
                 </div>
-            </td>
-            <td>
-                <h3 class="table__address">МКАД 19 км+230м Внешняя сторона, №569</h3>
-                <a href="" class="table__location">
-                    <svg>
-                        <use href="./img/icons/icons.svg#location"></use>
-                    </svg>
-                    <span>на карте</span>
-                </a>
-            </td>
-            <td>
-                <p class="table__format">Суперсайт
-                    5х15 м</p>
-            </td>
-            <td>
-                <p class="table__side">А</p>
-            </td>
-            <td>
-                <ul class="months table__months">
-                    <li class="months__item months__item_free">
-                        <input id="item1" type="checkbox" name="months_1455-А">
-                        <label for="item1">фев <span class="percent">%</span></label>
-                    </li>
-                    <li class="months__item months__item_busy">
-                        <input id="item2" type="checkbox" name="months_1455-А" disabled>
-                        <label for="item2">мар</label>
-                    </li>
-                    <li class="months__item months__item_busy">
-                        <input id="item3" type="checkbox" name="months_1455-А" disabled>
-                        <label for="item3">апр</label>
-                    </li>
-                    <li class="months__item months__item_free">
-                        <input id="item4" type="checkbox" checked name="months_1455-А">
-                        <label for="item4">июн</label>
-                    </li>
-                    <li class="months__item months__item_req">
-                        <input id="item5" type="checkbox" checked name="months_1455-А">
-                        <label for="item5">июл</label>
-                    </li>
-                    <li class="months__item months__item_req">
-                        <input id="item6" type="checkbox" name="months_1455-А">
-                        <label for="item6">авг</label>
-                    </li>
-                </ul>
-            </td>
-            <td>
-                <div class="prices table__prices">
-                    <p class="price price_old">24 700 ₽
-                        <span class="sale">-25%</span>
+            </li>
+            <li class="card ">
+                <div class="card__top">
+                    <h3 class="card__title">Английский для младшей школы<br> 7-10 лет</h3>
+                    <p class="card__subtitle">Боишься экзаменов? Чувствуешь неуверенность в своих силах? Есть
+                        пробелы в знаниях, а времени до экзамена все меньше?
                     </p>
-                    <p class="price">19 000 ₽</p>
+                    <a href="#" class="more">Подробнее</a>
                 </div>
-            </td>
-            <td>
-                <button class="btn btn_red table__btn">В корзину</button>
-            </td>
-        </tr>
-
-
-        <tr>
-            <td>
-                <div class="table__img">
-                    <img src="./img/hot/2.png" alt="Image">
+                <div class="card__bottom">
+                    <div class="card__info content">
+                        <p>8 занятий в месяц по 60 минут</p>
+                        <p class="card__price">5500 руб / мес</p>
+                        <p>687 руб / занятие</p>
+                    </div>
+                    <div class="signup">
+                        <button class="btn" data-socials="top">Записаться</button>
+                        <img class="free" src="./img/free.png" alt="Free">
+                    </div>
                 </div>
-            </td>
-            <td>
-                <h3 class="table__address">МКАД 19 км+230м Внешняя сторона, №569</h3>
-                <a href="" class="table__location">
-                    <svg>
-                        <use href="./img/icons/icons.svg#location"></use>
-                    </svg>
-                    <span>на карте</span>
-                </a>
-            </td>
-            <td>
-                <p class="table__format">Суперсайт
-                    5х15 м</p>
-            </td>
-            <td>
-                <p class="table__side">А</p>
-            </td>
-            <td>
-                <ul class="months table__months">
-                    <li class="months__item months__item_free">
-                        <input id="item1" type="checkbox" name="months_1455-А">
-                        <label for="item1">фев <span class="percent">%</span></label>
-                    </li>
-                    <li class="months__item months__item_busy">
-                        <input id="item2" type="checkbox" name="months_1455-А" disabled>
-                        <label for="item2">мар</label>
-                    </li>
-                    <li class="months__item months__item_busy">
-                        <input id="item3" type="checkbox" name="months_1455-А" disabled>
-                        <label for="item3">апр</label>
-                    </li>
-                    <li class="months__item months__item_free">
-                        <input id="item4" type="checkbox" checked name="months_1455-А">
-                        <label for="item4">июн</label>
-                    </li>
-                    <li class="months__item months__item_req">
-                        <input id="item5" type="checkbox" checked name="months_1455-А">
-                        <label for="item5">июл</label>
-                    </li>
-                    <li class="months__item months__item_req">
-                        <input id="item6" type="checkbox" name="months_1455-А">
-                        <label for="item6">авг</label>
-                    </li>
-                </ul>
-            </td>
-            <td>
-                <div class="prices table__prices">
-                    <p class="price price_old">24 700 ₽
-                        <span class="sale">-25%</span>
+            </li>
+            <li class="card ">
+                <div class="card__top">
+                    <h3 class="card__title">Английский для средней школы <br>10-14 лет</h3>
+                    <p class="card__subtitle">Боишься экзаменов? Чувствуешь неуверенность в своих силах? Есть
+                        пробелы в знаниях, а времени до экзамена все меньше?
                     </p>
-                    <p class="price">19 000 ₽</p>
+                    <a href="#" class="more">Подробнее</a>
                 </div>
-            </td>
-            <td>
-                <button class="btn btn_red table__btn">В корзину</button>
-            </td>
-        </tr>
+                <div class="card__bottom">
+                    <div class="card__info content">
+                        <p>8 занятий в месяц по 60 минут</p>
+                        <p class="card__price">5500 руб / мес</p>
+                        <p>687 руб / занятие</p>
+                    </div>
+                    <div class="signup">
+                        <button class="btn" data-socials="top">Записаться</button>
+                        <img class="free" src="./img/free.png" alt="Free">
+                    </div>
+                </div>
+            </li>
+            <li class="card ">
+                <div class="card__top">
+                    <h3 class="card__title">Английский для старшей школы <br>10-14 лет</h3>
+                    <p class="card__subtitle">Боишься экзаменов? Чувствуешь неуверенность в своих силах? Есть
+                        пробелы в знаниях, а времени до экзамена все меньше?
+                    </p>
+                    <a href="#" class="more">Подробнее</a>
+                </div>
+                <div class="card__bottom">
+                    <div class="card__info content">
+                        <p>8 занятий в месяц по 60 минут</p>
+                        <p class="card__price">5500 руб / мес</p>
+                        <p>687 руб / занятие</p>
+                    </div>
+                    <div class="signup">
+                        <button class="btn" data-socials="top">Записаться</button>
+                        <img class="free" src="./img/free.png" alt="Free">
+                    </div>
+                </div>
+            </li>
 
-    </table>
+        </ul>
 
-
-    <button class="btn btn_all">
-        <svg>
-            <use href="./img/icons/icons.svg#circle-arrow"></use>
-        </svg>
-        Показать еще
-    </button>
-
-    <div class="pagination">
-    <a class="pagination__prev" href="#"></a>
-    <a class="pagination__page " href="#">1</a>
-    <span class="pagination__page pagination__page_current" href="#">2</span>
-    <a class="pagination__page" href="#">3</a>
-    <a class="pagination__page" href="#">4</a>
-    <a class="pagination__page" href="#">5</a>
-    <span class="pagination__points" href="#">...</span>
-    <a class="pagination__page" href="#">87</a>
-    <a class="pagination__next disabled" href="#"></a>
-</div>
-</div>
-		</section>
-		<section class="section background-gray">
-    <div class="page__container">
-        <h2 class="section__title">
-            Размещаем рекламу на рекламных конструкциях уже 18 лет
-        </h2>
-        <div class="content" style="max-width: 928px;">
-            <p>Niko Media - это база рекламных поверхностей по Москве, Московской области и регионам, которая
-                работает в режиме реального времени.
-            </p>
-            <p style="margin-bottom: 11px;"><b>Особенности базы:</b></p>
-            <ul>
-                <li>Предложения от разных операторов собраны в единой адресной программе;</li>
-                <li>Доступ к данным рекламных поверхностей (цена, статус, медиаметрические показатели, фото,
-                    расположение на карте города);</li>
-                <li>Возможность самостоятельно планировать рекламную кампанию по различным форматам и регионам,
-                    непосредственно с сайта формировать презентацию;</li>
-            </ul>
-            <h2>Простой и понятный интерфейс — процесс закупки проходит в несколько кликов.</h2>
-            <p>
-                Многолетний опыт работы и прочные партнерские отношения с владельцами рекламных поверхностей
-                позволяют
-                нам предлагать лучшие конструкции по самым низким ценам. Наша компания располагает крупнейшим в
-                России
-                парком цифрового широкоформатного оборудования с действующей на предприятии системой
-                сертифицикации
-                качества по стандарту ISO 9001. Поэтому пользователи All-Billboards получают лучшие на рынке
-                цены
-                печати
-                для арендуемых рекламных поверхностей.
-            </p>
-        </div>
     </div>
 </section>
-		<section class="section">
+
+		<!-- Курсы для взрослых -->
+		<section class="section section_adult background-gray">
     <div class="page__container">
-        <h2 class="section__title">Вопрос-ответ</h2>
-        <ul class="spoilers">
-            <li class="spoiler">
-                <div class="spoiler__top">
-                    <h3 class="spoiler__name">Ваш вопрос про рекламные конструкции</h3>
-                    <button class="spoiler__btn"></button>
+        <div class="section__col2">
+            <div class="section__left">
+                <h2 class="section__title">Курсы для взрослых</h2>
+                <div class="section__text content">
+                    <p>Перед началом обучения мы проводим тестирование ребёнка и общаемся с ним. Это позволяет выявить
+                        его уровень английского и понять, в какой группе ему будет комфортнее и эффективнее учиться.
+                        Первый урок - всегда бесплатный. Приходите, посмотрите всё своими глазами, посетите наш урок,
+                        чтобы принять решение</p>
                 </div>
-                <div class="spoiler__bottom">
-                    <div class="content">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quisquam ut odit blanditiis
-                            aut
-                            velit, delectus consequatur amet impedit pariatur libero, rerum qui quidem ex, molestiae
-                            nemo.
-                            Commodi, dolores sit.
-                            Voluptas officia ipsam hic maiores commodi asperiores dolor est excepturi vel alias odit
-                            provident, in assumenda vero eum expedita laborum rem iusto placeat beatae quod ex esse
-                            error
-                            enim. Architecto!
-                            Ad aspernatur officiis recusandae commodi ipsum minima dolores cumque autem maxime? Delectus
-                            ea,
-                            ipsum quo quod eius provident necessitatibus totam sint eum, consectetur perferendis ducimus
-                            earum temporibus. Accusamus, aperiam sed.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur architecto aliquam, corrupti
-                            neque culpa eligendi, dicta sunt sequi ad delectus molestias debitis voluptas commodi
-                            doloribus
-                            quod minus eveniet totam quidem?
-                            Quidem esse, deleniti cum adipisci nam labore autem optio velit, beatae quo blanditiis modi
-                            dolorem. Ipsum ut voluptatum ratione, delectus laboriosam alias excepturi recusandae
-                            sapiente
-                            quidem officiis temporibus quae quis.
-                            Quis eum beatae dignissimos excepturi ab! Placeat, veniam porro impedit assumenda aperiam
-                            aspernatur autem perspiciatis nesciunt alias asperiores expedita possimus ab optio
-                            repellendus
-                            eum ipsa, consequatur cumque! Neque, dicta repellat.</p>
+            </div>
+            <div class="section__right">
+                <div class="adult-images">
+                    <img src="./img/bird-yellow.svg">
+                    <img src="./img/bird-red.svg">
+                </div>
+            </div>
+        </div>
+        <ul class="cards cards_courses">
+            <li class="card ">
+                <div class="card__top">
+                    <h3 class="card__title">Курс для родителей младших классов</h3>
+                    <p class="card__subtitle">Боишься экзаменов? Чувствуешь неуверенность в своих силах? Есть
+                        пробелы в знаниях, а времени до экзамена все меньше?
+                    </p>
+                    <a href="#" class="more">Подробнее</a>
+                </div>
+                <div class="card__bottom">
+                    <div class="card__info content">
+                        <p>8 занятий в месяц по 60 минут</p>
+                        <p class="card__price">5500 руб / мес</p>
+                        <p>687 руб / занятие</p>
+                    </div>
+                    <div class="signup">
+                        <button class="btn" data-socials="top">Записаться</button>
+                        <img class="free" src="./img/free.png" alt="Free">
+                    </div>
+                </div>
+
+            </li>
+            <li class="card ">
+                <div class="card__top">
+                    <h3 class="card__title">Курс для взрослых</h3>
+                    <p class="card__subtitle">Боишься экзаменов? Чувствуешь неуверенность в своих силах? Есть
+                        пробелы в знаниях, а времени до экзамена все меньше?
+                    </p>
+                    <a href="#" class="more">Подробнее</a>
+                </div>
+                <div class="card__bottom">
+                    <div class="card__info content">
+                        <p>8 занятий в месяц по 60 минут</p>
+                        <p class="card__price">5500 руб / мес</p>
+                        <p>687 руб / занятие</p>
+                    </div>
+                    <div class="signup">
+                        <button class="btn" data-socials="top">Записаться</button>
+                        <img class="free" src="./img/free.png" alt="Free">
                     </div>
                 </div>
             </li>
-            <li class="spoiler">
-                <div class="spoiler__top">
-                    <h3 class="spoiler__name">Ваш вопрос про рекламные конструкции</h3>
-                    <button class="spoiler__btn"></button>
+            <li class="card ">
+                <div class="card__top">
+                    <h3 class="card__title">Корпоративные курсы</h3>
+                    <p class="card__subtitle">Боишься экзаменов? Чувствуешь неуверенность в своих силах? Есть
+                        пробелы в знаниях, а времени до экзамена все меньше?
+                    </p>
+                    <a href="#" class="more">Подробнее</a>
                 </div>
-                <div class="spoiler__bottom">
-                    <div class="content">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quisquam ut odit blanditiis
-                            aut
-                            velit, delectus consequatur amet impedit pariatur libero, rerum qui quidem ex, molestiae
-                            nemo.
-                            Commodi, dolores sit.
-                            Voluptas officia ipsam hic maiores commodi asperiores dolor est excepturi vel alias odit
-                            provident, in assumenda vero eum expedita laborum rem iusto placeat beatae quod ex esse
-                            error
-                            enim. Architecto!
-                            Ad aspernatur officiis recusandae commodi ipsum minima dolores cumque autem maxime? Delectus
-                            ea,
-                            ipsum quo quod eius provident necessitatibus totam sint eum, consectetur perferendis ducimus
-                            earum temporibus. Accusamus, aperiam sed.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur architecto aliquam, corrupti
-                            neque culpa eligendi, dicta sunt sequi ad delectus molestias debitis voluptas commodi
-                            doloribus
-                            quod minus eveniet totam quidem?
-                            Quidem esse, deleniti cum adipisci nam labore autem optio velit, beatae quo blanditiis modi
-                            dolorem. Ipsum ut voluptatum ratione, delectus laboriosam alias excepturi recusandae
-                            sapiente
-                            quidem officiis temporibus quae quis.
-                            Quis eum beatae dignissimos excepturi ab! Placeat, veniam porro impedit assumenda aperiam
-                            aspernatur autem perspiciatis nesciunt alias asperiores expedita possimus ab optio
-                            repellendus
-                            eum ipsa, consequatur cumque! Neque, dicta repellat.</p>
+                <div class="card__bottom">
+                    <div class="card__info content">
+                        <p>8 занятий в месяц по 60 минут</p>
+                        <p class="card__price">5500 руб / мес</p>
+                        <p>687 руб / занятие</p>
                     </div>
-                </div>
-            </li>
-            <li class="spoiler">
-                <div class="spoiler__top">
-                    <h3 class="spoiler__name">Ваш вопрос про рекламные конструкции</h3>
-                    <button class="spoiler__btn"></button>
-                </div>
-                <div class="spoiler__bottom">
-                    <div class="content">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quisquam ut odit blanditiis
-                            aut
-                            velit, delectus consequatur amet impedit pariatur libero, rerum qui quidem ex, molestiae
-                            nemo.
-                            Commodi, dolores sit.
-                            Voluptas officia ipsam hic maiores commodi asperiores dolor est excepturi vel alias odit
-                            provident, in assumenda vero eum expedita laborum rem iusto placeat beatae quod ex esse
-                            error
-                            enim. Architecto!
-                            Ad aspernatur officiis recusandae commodi ipsum minima dolores cumque autem maxime? Delectus
-                            ea,
-                            ipsum quo quod eius provident necessitatibus totam sint eum, consectetur perferendis ducimus
-                            earum temporibus. Accusamus, aperiam sed.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur architecto aliquam, corrupti
-                            neque culpa eligendi, dicta sunt sequi ad delectus molestias debitis voluptas commodi
-                            doloribus
-                            quod minus eveniet totam quidem?
-                            Quidem esse, deleniti cum adipisci nam labore autem optio velit, beatae quo blanditiis modi
-                            dolorem. Ipsum ut voluptatum ratione, delectus laboriosam alias excepturi recusandae
-                            sapiente
-                            quidem officiis temporibus quae quis.
-                            Quis eum beatae dignissimos excepturi ab! Placeat, veniam porro impedit assumenda aperiam
-                            aspernatur autem perspiciatis nesciunt alias asperiores expedita possimus ab optio
-                            repellendus
-                            eum ipsa, consequatur cumque! Neque, dicta repellat.</p>
-                    </div>
-                </div>
-            </li>
-            <li class="spoiler">
-                <div class="spoiler__top">
-                    <h3 class="spoiler__name">Ваш вопрос про рекламные конструкции</h3>
-                    <button class="spoiler__btn"></button>
-                </div>
-                <div class="spoiler__bottom">
-                    <div class="content">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quisquam ut odit blanditiis
-                            aut
-                            velit, delectus consequatur amet impedit pariatur libero, rerum qui quidem ex, molestiae
-                            nemo.
-                            Commodi, dolores sit.
-                            Voluptas officia ipsam hic maiores commodi asperiores dolor est excepturi vel alias odit
-                            provident, in assumenda vero eum expedita laborum rem iusto placeat beatae quod ex esse
-                            error
-                            enim. Architecto!
-                            Ad aspernatur officiis recusandae commodi ipsum minima dolores cumque autem maxime? Delectus
-                            ea,
-                            ipsum quo quod eius provident necessitatibus totam sint eum, consectetur perferendis ducimus
-                            earum temporibus. Accusamus, aperiam sed.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur architecto aliquam, corrupti
-                            neque culpa eligendi, dicta sunt sequi ad delectus molestias debitis voluptas commodi
-                            doloribus
-                            quod minus eveniet totam quidem?
-                            Quidem esse, deleniti cum adipisci nam labore autem optio velit, beatae quo blanditiis modi
-                            dolorem. Ipsum ut voluptatum ratione, delectus laboriosam alias excepturi recusandae
-                            sapiente
-                            quidem officiis temporibus quae quis.
-                            Quis eum beatae dignissimos excepturi ab! Placeat, veniam porro impedit assumenda aperiam
-                            aspernatur autem perspiciatis nesciunt alias asperiores expedita possimus ab optio
-                            repellendus
-                            eum ipsa, consequatur cumque! Neque, dicta repellat.</p>
-                    </div>
-                </div>
-            </li>
-            <li class="spoiler">
-                <div class="spoiler__top">
-                    <h3 class="spoiler__name">Ваш вопрос про рекламные конструкции</h3>
-                    <button class="spoiler__btn"></button>
-                </div>
-                <div class="spoiler__bottom">
-                    <div class="content">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam quisquam ut odit blanditiis
-                            aut
-                            velit, delectus consequatur amet impedit pariatur libero, rerum qui quidem ex, molestiae
-                            nemo.
-                            Commodi, dolores sit.
-                            Voluptas officia ipsam hic maiores commodi asperiores dolor est excepturi vel alias odit
-                            provident, in assumenda vero eum expedita laborum rem iusto placeat beatae quod ex esse
-                            error
-                            enim. Architecto!
-                            Ad aspernatur officiis recusandae commodi ipsum minima dolores cumque autem maxime? Delectus
-                            ea,
-                            ipsum quo quod eius provident necessitatibus totam sint eum, consectetur perferendis ducimus
-                            earum temporibus. Accusamus, aperiam sed.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur architecto aliquam, corrupti
-                            neque culpa eligendi, dicta sunt sequi ad delectus molestias debitis voluptas commodi
-                            doloribus
-                            quod minus eveniet totam quidem?
-                            Quidem esse, deleniti cum adipisci nam labore autem optio velit, beatae quo blanditiis modi
-                            dolorem. Ipsum ut voluptatum ratione, delectus laboriosam alias excepturi recusandae
-                            sapiente
-                            quidem officiis temporibus quae quis.
-                            Quis eum beatae dignissimos excepturi ab! Placeat, veniam porro impedit assumenda aperiam
-                            aspernatur autem perspiciatis nesciunt alias asperiores expedita possimus ab optio
-                            repellendus
-                            eum ipsa, consequatur cumque! Neque, dicta repellat.</p>
+                    <div class="signup">
+                        <button class="btn" data-socials="top">Записаться</button>
+                        <img class="free" src="./img/free.png" alt="Free">
                     </div>
                 </div>
             </li>
         </ul>
     </div>
 </section>
-		<footer class="footer">
-    <div class="page__container footer__container">
-        <a href="/" class="logo footer__logo"></a>
-        <a href="tel:+73462550877" class="phone background-el footer__phone">
-            <svg>
-                <use href="./img/icons/icons.svg#phone"></use>
-            </svg>
-            <span>+7 (3462) 550-877</span>
-        </a>
-        <div class="footer__info">
-            <a href="mailto:zakaz@niko-m.ru" class="footer__email background-el-hover">zakaz@niko-m.ru</a>
-            <p class="footer__address">Сургут, ул. Киртбая, 11, этаж 4, офис 4</p>
-        </div>
-        <p class="footer__not">Не является публичной офертой</p>
-        <a href="#" class="footer__politic">Политика обработки персональных данных</a>
-        <a href="https://a1-reklama.ru" target="_blank" class="footer__dev">Разработка сайта: А1 реклама</a>
-    </div>
-</footer>
-	</div>
 
-	<template>
-    <div class="item tabs-parent" style="background-color: white">
-        <h4 class="item__title">Рекламный щит 3x6 (статика)</h4>
-        <div class="tabs item__tabs">
-            <div class="tabs__tab tabs__tab_active" data-tab="1" onclick="tabClick(this)">Сторона А</div>
-            <div class="tabs__tab" data-tab="2" onclick="tabClick(this)">Сторона Б</div>
-        </div>
-        <div class="item__container">
-            <div class="tabs__images item__tabs-images">
-                <img class="tabs__image tabs__image_active" src="./img/hot/4.png" alt="Image1" data-tab="1">
-                <img class="tabs__image" src="./img/hot/3.png" alt="Image2" data-tab="2">
-            </div>
-            <div class="item__info">
-                <div class="item__info-top">
-                    <p class="item__article">N1455-A</p>
-                    <div class="rating rating_set" data-rating="3.8">
-                        <div class="rating__body">
-                            <div class="rating__active"></div>
-                            <div class="rating__items">
-                                <input type="radio" class="rating__item" value="1" name="rating">
-                                <input type="radio" class="rating__item" value="2" name="rating">
-                                <input type="radio" class="rating__item" value="3" name="rating">
-                                <input type="radio" class="rating__item" value="4" name="rating">
-                                <input type="radio" class="rating__item" value="5" name="rating">
-                            </div>
-                        </div>
-                    </div>
+		<!-- Наши преподаватели -->
+		<section class="section section_teachers ">
+    <div class="page__container">
+        <h2 class="section__title">Наши преподаватели</h2>
+
+        <ul class="cards cards_teachers">
+            <li class="card card_teacher">
+                <div class="teacher-photo">
+                    <img src="./img/teacher.png" alt="Teacher">
+                    <img src="./img/bird-blue.svg">
+                    <img src="./img/bird-red.svg">
                 </div>
-                <div class="item__location">
-                    <svg>
-                        <use href="./img/icons/icons.svg#location"></use>
-                    </svg>
-                    <span>г.Сочи, напротив дома Ленина 51.</span>
+                <div class="card__subtitle">Преподаватель</div>
+                <h3 class="card__title">Кондакова Ксения Вячеславовна</h3>
+                <div class="content">
+                    <h3>Опыт:</h3>
+                    <ul class="checkbox">
+                        <li>Педагогический стаж <b>15 лет</b>, богатый международный опыт - работала в США, стажировки в
+                            Англии,
+                            Мальте, Сингапуре.</li>
+                        <li>Преподает все уровни от дошкольного до профессионального , готовит к экзаменам российским
+                            ОГЭ, ЕГЭ,
+                            и к международным TOEFL, LELTS, KET, PET, FCE, CAE, CPE.</li>
+                        <li>Применяет различные методики преподавания, как российские, так и международные.</li>
+                    </ul>
+                    <h3>Имеет:</h3>
+                    <ul class="education">
+                        <li>Сертификаты подтверждающие уровень владения языком,</li>
+                        <li>Документ о прохождении обучения методике преподавания иностранного языка,</li>
+                        <li>Диплом о высшем образовании - лингвист - преподаватель.</li>
+                        <li>Имеет опыт сопровождения детей для обучения зарубежом и опыт работы в детских лагерях.</li>
+                        <li>Так же владеет немецким языком - как вторым иностранным.</li>
+                    </ul>
                 </div>
-                <ul class="months">
-                    <li class="months__item months__item_free">
-                        <input id="item1" type="checkbox" name="months_1455-А">
-                        <label for="item1">фев <span class="percent">%</span></label>
-                    </li>
-                    <li class="months__item months__item_busy">
-                        <input id="item2" type="checkbox" name="months_1455-А" disabled>
-                        <label for="item2">мар</label>
-                    </li>
-                    <li class="months__item months__item_busy">
-                        <input id="item3" type="checkbox" name="months_1455-А" disabled>
-                        <label for="item3">апр</label>
-                    </li>
-                    <li class="months__item months__item_free">
-                        <input id="item4" type="checkbox" checked name="months_1455-А">
-                        <label for="item4">июн</label>
-                    </li>
-                    <li class="months__item months__item_req">
-                        <input id="item5" type="checkbox" checked name="months_1455-А">
-                        <label for="item5">июл</label>
-                    </li>
-                    <li class="months__item months__item_req">
-                        <input id="item6" type="checkbox" name="months_1455-А">
-                        <label for="item6">авг</label>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="prices item__prices">
-            <p class="price price_old">24 700 ₽
-                <span class="sale sale_icon">-25%</span>
-            </p>
-            <p class="price">19 000 ₽ / мес</p>
-        </div>
-        <div class="item__buttons">
-            <button class="btn btn_red">В корзину</button>
-            <button class="btn">Подробнее</button>
-        </div>
+            </li>
+            <li class="card card_teacher">
+                <div class="teacher-photo">
+                    <img src="./img/teacher.png" alt="Teacher">
+                    <img src="./img/bird-blue.svg">
+                    <img src="./img/bird-red.svg">
+                </div>
+                <div class="card__subtitle">Преподаватель</div>
+                <h3 class="card__title">Александрова Мадина Наильевна</h3>
+                <div class="content">
+                    <h3>Опыт:</h3>
+                    <ul class="checkbox">
+                        <li>Педагогический стаж <b>15 лет</b>, богатый международный опыт - работала в США, стажировки в
+                            Англии,
+                            Мальте, Сингапуре.</li>
+                        <li>Преподает все уровни от дошкольного до профессионального , готовит к экзаменам российским
+                            ОГЭ, ЕГЭ,
+                            и к международным TOEFL, LELTS, KET, PET, FCE, CAE, CPE.</li>
+                        <li>Применяет различные методики преподавания, как российские, так и международные.</li>
+                    </ul>
+                    <h3>Имеет:</h3>
+                    <ul class="education">
+                        <li>Сертификаты подтверждающие уровень владения языком,</li>
+                        <li>Документ о прохождении обучения методике преподавания иностранного языка,</li>
+                        <li>Диплом о высшем образовании - лингвист - преподаватель.</li>
+                        <li>Имеет опыт сопровождения детей для обучения зарубежом и опыт работы в детских лагерях.</li>
+                        <li>Так же владеет немецким языком - как вторым иностранным.</li>
+                    </ul>
+                </div>
+            </li>
+
+        </ul>
+
     </div>
-</template>
+
+
+    </div>
+</section>
+
+	</div>
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 	<script src="./js/app.js"></script>
 </body>
