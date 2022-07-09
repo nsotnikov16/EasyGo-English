@@ -1,0 +1,126 @@
+.contacts {
+  display: grid;
+  grid-template-columns: 42.5% 49%;
+  justify-content: space-between;
+  &__left {
+  }
+
+  &__location {
+    display: flex;
+    align-items: center;
+  }
+
+  .about-video {
+    margin-right: 31px;
+    > div {
+      background-image: url(../img/contacts.png);
+      width: 221px;
+      height: 163px;
+      border-radius: 0;
+      margin-bottom: 4px;
+      &::after {
+        content: initial;
+      }
+
+      &:hover {
+        background-image: url(../img/contacts-hover.png);
+      }
+    }
+    b {
+      text-align: center;
+      font-size: 18px;
+      display: block;
+    }
+  }
+
+  &__info {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 150%;
+    p {
+      margin-bottom: 8px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__teachers {
+    margin-top: 18px;
+  }
+
+  &__teacher {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    gap: 12px 30px;
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 16px 30px;
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__teacher-img {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    grid-row: 1/4;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__teacher-name {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 150%;
+    /* identical to box height, or 45px */
+
+    color: #006eb8;
+  }
+
+  &__teacher-phone {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 150%;
+    /* identical to box height, or 54px */
+
+    color: #0a0a0b;
+    &:hover {
+      color: #eb4961;
+    }
+  }
+
+  &__teacher-socials {
+  }
+
+  &__right {
+    position: relative;
+    img {
+      position: absolute;
+      &:first-of-type {
+        width: 263px;
+        left: -69px;
+        top: -25px;
+      }
+
+      &:last-of-type {
+        width: 200px;
+        right: -45px;
+        bottom: -20px;
+      }
+    }
+    iframe {
+      border-radius: 45px;
+      width: 750px;
+      height: 750px;
+    }
+  }
+}
+

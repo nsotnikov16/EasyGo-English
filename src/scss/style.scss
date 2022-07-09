@@ -49,6 +49,13 @@ body {
 /* Прочее */
 @import "other";
 
+/* Popups */
+@import "popups";
+
+/* Сториз */
+@import "stories";
+@import "toStories";
+
 /* Меню */
 @import "menu";
 
@@ -62,13 +69,16 @@ body {
 @import "banner";
 
 /* Карточки */
-@import 'cards';
+@import "cards";
 
 /* Пробный урок */
-@import 'lesson';
+@import "lesson";
+
+/* Медиа */
+@import "media";
 
 /* Спойлеры */
-@import 'spoiler';
+@import "spoiler";
 
-/* Подвал */
-@import "footer";
+/* Контакты */
+@import "contacts";

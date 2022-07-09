@@ -51,7 +51,15 @@
   }
 
   &_questions {
-    padding: 0/* 100px */ 0 167px;
+    padding:  100px 0 167px;
+  }
+
+  &_contacts {
+    padding: 156px 0 70px;
+  }
+
+  &_media {
+    padding: 135px 0 113px;
   }
 }
 
@@ -79,7 +87,7 @@
     color: $main;
     background-color: white;
     &:hover {
-      background: #FFB547 !important;
+      background: #ffb547 !important;
       color: white;
     }
   }
@@ -252,4 +260,46 @@
       top: 204px;
     }
   }
+}
+
+.copyright {
+  margin-top: 69px;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+
+.socials {
+  display: flex;
+  height: 70px;
+
+  a {
+    display: block;
+    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+    }
+  }
+}
+.whatsapp {
+  background-color: #29a71a;
+  background-image: url(../img/socials/whatsapp.svg);
+}
+.viber {
+  background-color: #6f3faa;
+  background-image: url(../img/socials/viber.svg);
+}
+.telegram {
+  background-color: #039be5;
+  background-image: url(../img/socials/telegram.svg);
 }

@@ -28,14 +28,13 @@
 
   &__close {
     position: absolute;
-    top: 35px;
-    right: 25px;
+    top: -20px;
+    right: -20px;
     font-size: 35px;
-    font-weight: 300;
-    color: gray;
-    opacity: 0.7;
+    color: white;
+    
     &:hover {
-      color: #ffaf35;
+      color: #EB4961;
     }
 
     @media(max-width: 767px) {
