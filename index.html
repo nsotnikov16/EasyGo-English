@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 	<title>EasyGo English</title>
 </head>
@@ -17,14 +18,14 @@
     <div class="page__container header__container">
         <div href="/" class="logo"></div>
         <nav class="menu">
-            <a href="" class="menu__item">О школе</a>
-            <a href="" class="menu__item">Школьникам</a>
-            <a href="" class="menu__item">Взрослым</a>
-            <a href="" class="menu__item">Отзывы</a>
+            <a href="#about" class="menu__item scroll">О школе</a>
+            <a href="#school" class="menu__item scroll">Школьникам</a>
+            <a href="#adult" class="menu__item scroll">Взрослым</a>
+            <a href="#reviews" class="menu__item scroll">Отзывы</a>
         </nav>
         <div class="header__contacts">
             <a href="tel:+79226569961" class="phone">+7 922 656 99 61</a>
-            <button class="btn" data-socials="bottom">Бесплатное занятие</button>
+            <button class="btn" data-socials="true">Бесплатное занятие</button>
         </div>
     </div>
 </header>
@@ -32,40 +33,40 @@
 		<!-- Баннер -->
 		<div class="banner background-gray">
     <div class="images">
-        <img src="./img/banner/girl.png" class="images__girl">
-        <img src="./img/banner/teacher.png" class="images__teacher">
-        <img src="./img/banner/boy.png" class="images__boy">
-        <img src="./img/bird-blue.svg" class="images__bird-blue">
-        <img src="./img/bird-red.svg" class="images__bird-red">
-        <img src="./img/bird-blue.svg" class="images__bird-blue-right">
+        <img data-aos="fade-up" data-aos-delay="500" src="./img/banner/girl.png" class="images__girl">
+        <img data-aos="fade-up" data-aos-delay="500" src="./img/banner/teacher.png" class="images__teacher">
+        <img data-aos="fade-up" data-aos-delay="500" src="./img/banner/boy.png" class="images__boy">
+        <img src="./img/bird-blue.svg" data-aos="fade-down-right" data-aos-delay="500" class="images__bird-blue">
+        <img src="./img/bird-red.svg" data-aos="fade-down-left" data-aos-delay="500" class="images__bird-red">
+        <img src="./img/bird-blue.svg" data-aos="fade-up-right" data-aos-delay="500" class="images__bird-blue-right">
     </div>
     <div class="page__container">
         <div class="swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <h2 class="banner__title">Английский для детей и подростков</h2>
-                    <p class="banner__subtitle">Подтянем успеваемость в школе, увеличим словарный запас, научим
+                    <h2 class="banner__title"  data-aos="fade-up" data-aos-delay="400">Английский для детей и подростков</h2>
+                    <p class="banner__subtitle" data-aos="fade-right" data-aos-delay="500">Подтянем успеваемость в школе, увеличим словарный запас, научим
                         свободно выражать мысли на английском языке</p>
-                    <div class="signup">
-                        <button class="btn" data-socials="top">Записаться</button>
+                    <div class="signup" data-aos="fade-left" data-aos-delay="600">
+                        <button class="btn" data-socials="true">Записаться</button>
                         <img class="free" src="./img/free.png" alt="Free">
                     </div>
                 </div>
                 <div class="swiper-slide">
-                    <h2 class="banner__title">Подготовим ребёнка к ОГЭ и ЕГЭ</h2>
-                    <p class="banner__subtitle">Разберём подводные камни экзамена, дадим пошаговую инструкцию
+                    <h2 class="banner__title" data-aos="fade-up" data-aos-delay="400">Подготовим ребёнка к ОГЭ и ЕГЭ</h2>
+                    <p class="banner__subtitle" data-aos="fade-right" data-aos-delay="500">Разберём подводные камни экзамена, дадим пошаговую инструкцию
                         для успешной сдачи экзамена</p>
-                    <div class="signup">
-                        <button class="btn" data-socials="top">Записаться</button>
+                    <div class="signup" data-aos="fade-left" data-aos-delay="600">
+                        <button class="btn" data-socials="true">Записаться</button>
                         <img class="free" src="./img/free.png" alt="Free">
                     </div>
                 </div>
                 <div class="swiper-slide">
-                    <h2 class="banner__title">Курсы английского для взрослых</h2>
-                    <p class="banner__subtitle">Улучшим уровень вашего языка, выучим английский для конкретных
+                    <h2 class="banner__title" data-aos="fade-up" data-aos-delay="400">Курсы английского для взрослых</h2>
+                    <p class="banner__subtitle" data-aos="fade-right" data-aos-delay="500">Улучшим уровень вашего языка, выучим английский для конкретных
                         жизненных задач</p>
-                    <div class="signup">
-                        <button class="btn" data-socials="top">Записаться</button>
+                    <div class="signup" data-aos="fade-left" data-aos-delay="600">
+                        <button class="btn" data-socials="true">Записаться</button>
                         <img class="free" src="./img/free.png" alt="Free">
                     </div>
                 </div>
@@ -80,7 +81,8 @@
 		<div class="to-stories">
     <div class="page__container">
         <ul class="to-stories__list">
-            <li data-pointer="stories" onclick="stories.onActiveSlide(0)" class="to-stories__item for-fixed">
+            <li data-aos="zoom-in-up" data-aos-delay="400" data-pointer="stories" onclick="stories.onActiveSlide(0)"
+                class="to-stories__item for-fixed">
                 <div class="to-stories__img">
                     <img src="./img/stories/stories1.png">
                 </div>
@@ -88,15 +90,17 @@
                     Скидка 15% до 25 Августа
                 </p>
             </li>
-            <li data-pointer="stories" onclick="stories.onActiveSlide(1)" class="to-stories__item">
+            <li data-aos="zoom-in-up" data-aos-delay="500" data-pointer="stories" onclick="stories.onActiveSlide(1)"
+                class="to-stories__item">
                 <div class="to-stories__img">
                     <img src="./img/stories/stories2.png">
                 </div>
                 <p class="to-stories__title">
-                    Скидка 10% за друга! 
+                    Скидка 10% за друга!
                 </p>
             </li>
-            <li data-pointer="stories" onclick="stories.onActiveSlide(2)" class="to-stories__item">
+            <li data-aos="zoom-in-up" data-aos-delay="600" data-pointer="stories" onclick="stories.onActiveSlide(2)"
+                class="to-stories__item">
                 <div class="to-stories__img">
                     <img src="./img/stories/stories3.png">
                 </div>
@@ -109,13 +113,13 @@
 </div>
 
 		<!-- Кто мы? -->
-		<section class="section section_about">
+		<section class="section section_about" id="about">
     <div class="page__container section__col2">
         <div class="section__left">
-            <h2 class="section__title">Кто мы?</h2>
-            <div class="section__text content">
+            <h2 class="section__title" data-aos="fade-up" data-aos-delay="400">Кто мы?</h2>
+            <div class="section__text content" data-aos="fade-up" data-aos-delay="600">
                 <p>
-                    Привет! Наша цель - научить вас говорить на английском языке.
+                    Привет! Наша цель - <span class="more" data-pointer="detail1">научить</span> вас говорить на английском языке.
                 </p>
                 <p>Мы стараемся делать это легко и интересно, потому-что только так можно выучить иностранный
                     язык.
@@ -130,7 +134,7 @@
             </div>
         </div>
         <div class="section__right content">
-            <div class="about-video">
+            <div class="about-video" data-aos="zoom-in-up">
                 <div>
                     <button></button>
                 </div>
@@ -141,12 +145,12 @@
 </section>
 
 		<!-- Курсы для школьников -->
-		<section class="section section_school background-gray">
+		<section class="section section_school background-gray" id="school">
     <div class="page__container">
         <div class="section__col2">
             <div class="section__left">
-                <h2 class="section__title">Курсы для школьников</h2>
-                <div class="section__text content">
+                <h2 class="section__title" data-aos="fade-up" data-aos-delay="400">Курсы для школьников</h2>
+                <div class="section__text content" data-aos="fade-up" data-aos-delay="600">
                     <p>Перед началом обучения мы проводим тестирование ребёнка и общаемся с ним. Это позволяет
                         выявить его уровень английского и понять, в какой группе ему будет комфортнее и
                         эффективнее учиться. Первый урок - всегда бесплатный. Приходите, посмотрите всё своими
@@ -154,20 +158,20 @@
                 </div>
             </div>
             <div class="section__right">
-                <div class="school-images">
-                    <img src="./img/bird-red.svg">
-                    <img src="./img/bird-blue.svg">
+                <div class="school-images" data-aos="zoom-in-up">
+                    <img src="./img/bird-red.svg" data-aos="fade-down-right" data-aos-delay="500">
+                    <img src="./img/bird-blue.svg" data-aos="fade-down-left" data-aos-delay="500">
                 </div>
             </div>
         </div>
-        <ul class="cards cards_courses">
+        <ul class="cards cards_courses" data-aos="flip-up" data-aos-delay="700">
             <li class="card ">
                 <div class="card__top">
                     <h3 class="card__title">Подготовка<br> к ОГЭ и ЕГЭ</h3>
                     <p class="card__subtitle">Боишься экзаменов? Чувствуешь неуверенность в своих силах? Есть
                         пробелы в знаниях, а времени до экзамена все меньше?
                     </p>
-                    <a href="#" class="more">Подробнее</a>
+                    <span class="more" data-pointer="detail1">Подробнее</span>
                 </div>
                 <div class="card__bottom">
                     <div class="card__info content">
@@ -176,7 +180,7 @@
                         <p>687 руб / занятие</p>
                     </div>
                     <div class="signup">
-                        <button class="btn" data-socials="top">Записаться</button>
+                        <button class="btn" data-socials="true">Записаться</button>
                         <img class="free" src="./img/free.png" alt="Free">
                     </div>
                 </div>
@@ -188,7 +192,7 @@
                     <p class="card__subtitle">Боишься экзаменов? Чувствуешь неуверенность в своих силах? Есть
                         пробелы в знаниях, а времени до экзамена все меньше?
                     </p>
-                    <a href="#" class="more">Подробнее</a>
+                    <span class="more" data-pointer="detail1">Подробнее</span>
                 </div>
                 <div class="card__bottom">
                     <div class="card__info content">
@@ -197,7 +201,7 @@
                         <p>687 руб / занятие</p>
                     </div>
                     <div class="signup">
-                        <button class="btn" data-socials="top">Записаться</button>
+                        <button class="btn" data-socials="true">Записаться</button>
                         <img class="free" src="./img/free.png" alt="Free">
                     </div>
                 </div>
@@ -208,7 +212,7 @@
                     <p class="card__subtitle">Боишься экзаменов? Чувствуешь неуверенность в своих силах? Есть
                         пробелы в знаниях, а времени до экзамена все меньше?
                     </p>
-                    <a href="#" class="more">Подробнее</a>
+                    <span class="more" data-pointer="detail1">Подробнее</span>
                 </div>
                 <div class="card__bottom">
                     <div class="card__info content">
@@ -217,7 +221,7 @@
                         <p>687 руб / занятие</p>
                     </div>
                     <div class="signup">
-                        <button class="btn" data-socials="top">Записаться</button>
+                        <button class="btn" data-socials="true">Записаться</button>
                         <img class="free" src="./img/free.png" alt="Free">
                     </div>
                 </div>
@@ -228,7 +232,7 @@
                     <p class="card__subtitle">Боишься экзаменов? Чувствуешь неуверенность в своих силах? Есть
                         пробелы в знаниях, а времени до экзамена все меньше?
                     </p>
-                    <a href="#" class="more">Подробнее</a>
+                    <span class="more" data-pointer="detail1">Подробнее</span>
                 </div>
                 <div class="card__bottom">
                     <div class="card__info content">
@@ -237,7 +241,7 @@
                         <p>687 руб / занятие</p>
                     </div>
                     <div class="signup">
-                        <button class="btn" data-socials="top">Записаться</button>
+                        <button class="btn" data-socials="true">Записаться</button>
                         <img class="free" src="./img/free.png" alt="Free">
                     </div>
                 </div>
@@ -248,7 +252,7 @@
                     <p class="card__subtitle">Боишься экзаменов? Чувствуешь неуверенность в своих силах? Есть
                         пробелы в знаниях, а времени до экзамена все меньше?
                     </p>
-                    <a href="#" class="more">Подробнее</a>
+                    <span class="more" data-pointer="detail1">Подробнее</span>
                 </div>
                 <div class="card__bottom">
                     <div class="card__info content">
@@ -257,7 +261,7 @@
                         <p>687 руб / занятие</p>
                     </div>
                     <div class="signup">
-                        <button class="btn" data-socials="top">Записаться</button>
+                        <button class="btn" data-socials="true">Записаться</button>
                         <img class="free" src="./img/free.png" alt="Free">
                     </div>
                 </div>
@@ -269,12 +273,12 @@
 </section>
 
 		<!-- Курсы для взрослых -->
-		<section class="section section_adult background-gray">
+		<section class="section section_adult background-gray" id="adult">
     <div class="page__container">
         <div class="section__col2">
             <div class="section__left">
-                <h2 class="section__title">Курсы для взрослых</h2>
-                <div class="section__text content">
+                <h2 class="section__title" data-aos="fade-up" data-aos-delay="400">Курсы для взрослых</h2>
+                <div class="section__text content" data-aos="fade-up" data-aos-delay="400">
                     <p>Перед началом обучения мы проводим тестирование ребёнка и общаемся с ним. Это позволяет выявить
                         его уровень английского и понять, в какой группе ему будет комфортнее и эффективнее учиться.
                         Первый урок - всегда бесплатный. Приходите, посмотрите всё своими глазами, посетите наш урок,
@@ -282,20 +286,20 @@
                 </div>
             </div>
             <div class="section__right">
-                <div class="adult-images">
-                    <img src="./img/bird-yellow.svg">
-                    <img src="./img/bird-red.svg">
+                <div class="adult-images" data-aos="zoom-in-up">
+                    <img src="./img/bird-yellow.svg" data-aos="fade-down-right" data-aos-delay="500">
+                    <img src="./img/bird-red.svg" data-aos="fade-down-left" data-aos-delay="500">
                 </div>
             </div>
         </div>
-        <ul class="cards cards_courses">
+        <ul class="cards cards_courses" data-aos="flip-down" data-aos-delay="700">
             <li class="card ">
                 <div class="card__top">
                     <h3 class="card__title">Курс для родителей младших классов</h3>
                     <p class="card__subtitle">Боишься экзаменов? Чувствуешь неуверенность в своих силах? Есть
                         пробелы в знаниях, а времени до экзамена все меньше?
                     </p>
-                    <a href="#" class="more">Подробнее</a>
+                    <span class="more" data-pointer="detail1">Подробнее</span>
                 </div>
                 <div class="card__bottom">
                     <div class="card__info content">
@@ -304,7 +308,7 @@
                         <p>687 руб / занятие</p>
                     </div>
                     <div class="signup">
-                        <button class="btn" data-socials="top">Записаться</button>
+                        <button class="btn" data-socials="true">Записаться</button>
                         <img class="free" src="./img/free.png" alt="Free">
                     </div>
                 </div>
@@ -316,7 +320,7 @@
                     <p class="card__subtitle">Боишься экзаменов? Чувствуешь неуверенность в своих силах? Есть
                         пробелы в знаниях, а времени до экзамена все меньше?
                     </p>
-                    <a href="#" class="more">Подробнее</a>
+                    <span class="more" data-pointer="detail1">Подробнее</span>
                 </div>
                 <div class="card__bottom">
                     <div class="card__info content">
@@ -325,7 +329,7 @@
                         <p>687 руб / занятие</p>
                     </div>
                     <div class="signup">
-                        <button class="btn" data-socials="top">Записаться</button>
+                        <button class="btn" data-socials="true">Записаться</button>
                         <img class="free" src="./img/free.png" alt="Free">
                     </div>
                 </div>
@@ -336,7 +340,7 @@
                     <p class="card__subtitle">Боишься экзаменов? Чувствуешь неуверенность в своих силах? Есть
                         пробелы в знаниях, а времени до экзамена все меньше?
                     </p>
-                    <a href="#" class="more">Подробнее</a>
+                    <span class="more" data-pointer="detail1">Подробнее</span>
                 </div>
                 <div class="card__bottom">
                     <div class="card__info content">
@@ -345,7 +349,7 @@
                         <p>687 руб / занятие</p>
                     </div>
                     <div class="signup">
-                        <button class="btn" data-socials="top">Записаться</button>
+                        <button class="btn" data-socials="true">Записаться</button>
                         <img class="free" src="./img/free.png" alt="Free">
                     </div>
                 </div>
@@ -357,10 +361,10 @@
 		<!-- Наши преподаватели -->
 		<section class="section section_teachers ">
     <div class="page__container">
-        <h2 class="section__title">Наши преподаватели</h2>
+        <h2 class="section__title" data-aos="fade-up" data-aos-delay="400">Наши преподаватели</h2>
 
         <ul class="cards cards_teachers">
-            <li class="card card_teacher">
+            <li class="card card_teacher" data-aos="fade-down-right" data-aos-delay="600">
                 <div class="teacher-photo">
                     <img src="./img/teacher.png" alt="Teacher">
                     <img src="./img/bird-blue.svg">
@@ -389,7 +393,7 @@
                     </ul>
                 </div>
             </li>
-            <li class="card card_teacher">
+            <li class="card card_teacher" data-aos="fade-down-left" data-aos-delay="600">
                 <div class="teacher-photo">
                     <img src="./img/teacher.png" alt="Teacher">
                     <img src="./img/bird-blue.svg">
@@ -431,11 +435,12 @@
 		<div class="page__container lesson">
     <div class="lesson__container">
         <div class="lesson__left">
-            <h2 class="lesson__title"><span>Пробный</span> урок в подарок</h2>
-            <div class="lesson__subtitle">Запишитесь на обучение и получите пробный урок бесплатно</div>
-            <button class="btn btn_white">Хочу пробное занятие</button>
+            <h2 class="lesson__title" data-aos="fade-up"><span>Пробный</span> урок в подарок</h2>
+            <div class="lesson__subtitle" data-aos="fade-up">Запишитесь на обучение и получите пробный урок бесплатно
+            </div>
+            <button class="btn btn_white" data-socials="true" data-aos="fade-up">Хочу пробное занятие</button>
         </div>
-        <div class="lesson__right">
+        <div class="lesson__right" data-aos="zoom-in-up">
             <img src="./img/lesson.png">
             <img src="./img/lesson-circle.png">
             <img src="./img/bird-blue.svg">
@@ -447,7 +452,7 @@
 		<!-- Фото и видео -->
 		<section class="section section_media background-gray tabs-parent">
     <div class="page__container">
-        <h2 class="section__title">Фотографии и видео с занятий</h2>
+        <h2 class="section__title" data-aos="fade-up">Фотографии и видео с занятий</h2>
         <div class="tabs">
             <button class="tabs__tab tabs__tab_active" data-tab="1" onclick="tabClick(this)">Фото</button>
             <button class="tabs__tab" data-tab="2" onclick="tabClick(this)">Видео</button>
@@ -653,6 +658,14 @@
 </section>
 	</div>
 
+	<!-- Соц сети при наведении на кнопку "записаться" -->
+	<div class="socials socials_hover">
+		<div class="socials__container">
+			<a href="#" class="whatsapp"></a>
+			<a href="#" class="viber"></a>
+			<a href="#" class="telegram"></a>
+		</div>
+	</div>
 
 	<!-- Сториз (модалки) -->
 	<div id="stories" class="popup">
@@ -736,7 +749,64 @@
         </div>
         <button class="popup__close"><span>&#10006;</span></button>
     </div>
+</div>
 
+	<!-- Модалки детальных описаний -->
+	<div id="detail1" class="popup">
+    <div class="popup__container popup-detail">
+        <div class="popup__content">
+            <div class="detail">
+
+                <h2 class="detail__title">Подготовка к ОГЭ и ЕГЭ</h2>
+                <div class="detail__content">
+
+                    <h3>Убиваем монстров ОГЭ и ЕГЭ!</h3>
+                    <p>Боишься экзаменов? Чувствуешь неуверенность в своих силах? Есть пробелы в знаниях, а
+                        времени до
+                        экзамена все меньше?</p>
+                    <br>
+                    <br>
+                    <p><b>Приходи на наши уроки и ты узнаешь самые полезные лайфхаки:</b> </p>
+                    <ul>
+                        <li>Как набрать баллы по аудированию, даже не слушая запись</li>
+                        <li>Как не попасть в ловушку составителей экзамена (разбираем подводные камни)</li>
+                        <li>Как уложиться во времени и все успеть</li>
+                        <li> Как использовать суффиксы и приставки</li>
+                        <li> Как уверенно сдать устную часть и др.</li>
+                    </ul>
+
+                    <h3>Ты получишь:</h3>
+
+                    <ul>
+                        <li> Пошаговые инструкции выполнения типовых заданий</li>
+                        <li>Шаблоны для устной и письменной части экзамена</li>
+                        <li>Материалы для подготовки и сопровождение педагога</li>
+                    </ul>
+
+                    <h3>А также просто Удовольствие от полезных и интересных занятий!</h3>
+                </div>
+                <div class="card__bottom">
+                    <div class="card__info content">
+                        <p>8 занятий в месяц по 60 минут</p>
+                        <p class="card__price">5500 руб / мес</p>
+                        <p>687 руб / занятие</p>
+                    </div>
+                    <div class="signup">
+                        <button class="btn" data-socials="true">Записаться</button>
+                        <img class="free" src="./img/free.png" alt="Free">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <button class="popup__close"><span>&#10006;</span></button>
+    </div>
+
+</div>
+
+</div>
+	
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 	<script src="./js/app.js"></script>
 </body>
