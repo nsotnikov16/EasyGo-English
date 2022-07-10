@@ -34,13 +34,10 @@ const swiperBanner = new Swiper('.banner .swiper', {
                 })
             }, 50)
         },
-        init: function () {
-            /*  document.querySelector('.swiper-banners .swiper-slide .banners__banner').classList.add('_animate') */
-        }
     },
 })
 
-const swiperPhoto = new Swiper('.swiper-photo', {
+let paramsMedia = {
     slidesPerView: 'auto',
     speed: 500,
     freeMode: true,
@@ -49,28 +46,22 @@ const swiperPhoto = new Swiper('.swiper-photo', {
         el: '.swiper-photo .swiper-scrollbar',
         draggable: true,
     },
-})
-
-const swiperVideo = new Swiper('.swiper-video', {
-    slidesPerView: 'auto',
-    speed: 500,
-
-    scrollbar: {
-        el: '.swiper-photo .swiper-scrollbar',
-        draggable: true,
-    },
-})
+    on: {
+        init: function () {
+            media.forEach(item => {
+                if (item.offsetHeight > 845) {
+                    while (item.offsetHeight > 945) {
+                        item.style.width = `${item.offsetWidth + item.offsetWidth * 0.1}px`
+                    }
+                }
+            })
+        }
+    }
+}
 
 const media = [document.querySelector('.swiper-photo .swiper-wrapper'), document.querySelector('.swiper-video .swiper-wrapper')]
-document.addEventListener('DOMContentLoaded', () => {
-    media.forEach(item => {
-        if (item.offsetHeight > 845) {
-            while (item.offsetHeight > 945) {
-                item.style.width = `${item.offsetWidth + item.offsetWidth * 0.1}px`
-            }
-        }
-    })
-})
+const swiperPhoto = new Swiper('.swiper-photo', paramsMedia)
+const swiperVideo = new Swiper('.swiper-video', paramsMedia)
 
 const mediaItemsVideo = document.querySelectorAll('.media__item_video')
 if (mediaItemsVideo.length > 0) {
