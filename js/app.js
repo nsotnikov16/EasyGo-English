@@ -43,6 +43,17 @@ const swiperBanner = new Swiper('.banner .swiper', {
 const swiperPhoto = new Swiper('.swiper-photo', {
     slidesPerView: 'auto',
     speed: 500,
+    freeMode: true,
+    /* mousewheel: true, */
+    scrollbar: {
+        el: '.swiper-photo .swiper-scrollbar',
+        draggable: true,
+    },
+})
+
+const swiperVideo = new Swiper('.swiper-video', {
+    slidesPerView: 'auto',
+    speed: 500,
 
     scrollbar: {
         el: '.swiper-photo .swiper-scrollbar',
