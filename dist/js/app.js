@@ -18,13 +18,16 @@ const swiperPhoto = new Swiper('.swiper-photo', {
 })
 
 const media = [document.querySelector('.swiper-photo .swiper-wrapper'), document.querySelector('.swiper-video .swiper-wrapper')]
-media.forEach(item => {
-    if (item.offsetHeight > 845) {
-        while (item.offsetHeight > 945) {
-            item.style.width = `${item.offsetWidth + item.offsetWidth * 0.1}px`
+document.addEventListener('DOMContentLoaded', () => {
+    media.forEach(item => {
+        if (item.offsetHeight > 845) {
+            while (item.offsetHeight > 945) {
+                item.style.width = `${item.offsetWidth + item.offsetWidth * 0.1}px`
+            }
         }
-    }
+    })
 })
+
 const mediaItemsVideo = document.querySelectorAll('.media__item_video')
 if (mediaItemsVideo.length > 0) {
     mediaItemsVideo.forEach(item => {
