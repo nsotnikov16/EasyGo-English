@@ -1213,8 +1213,12 @@ body {
 }
 
 /* Изображения */
+.images {
+  z-index: 20;
+}
 .images img {
   position: absolute;
+  z-index: 20;
 }
 .images__girl {
   top: 56px;
