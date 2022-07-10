@@ -9,6 +9,14 @@
     border-radius: 50%;
   }
 
+  &__girl,
+  &__teacher,
+  &__boy {
+    animation: clip 1s ease-out;
+    clip-path: circle(100% at 50% 50%);
+    animation-delay: 0.5s;
+  }
+
   &__teacher {
     right: 0;
     top: -30px;
@@ -20,6 +28,7 @@
   }
 
   &__bird-blue {
+  /*   animation: floatedLay 2s ease-in-out infinite; */
     top: 24px;
     right: 520px;
   }

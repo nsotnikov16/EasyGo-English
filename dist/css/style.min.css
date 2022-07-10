@@ -535,6 +535,9 @@ body {
   background: #ffb547 !important;
   color: white;
 }
+.btn[data-socials=true] {
+  position: relative;
+}
 .btn:hover {
   cursor: pointer;
   background-color: #ff2f4e;
@@ -657,13 +660,13 @@ body {
 }
 
 .more {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 140%;
-  color: #0a0a0b;
+  font-weight: 600;
+  font-size: 24px;
+  color: #ff2f4e;
   opacity: 0.7;
-  padding-bottom: 2px;
+  padding-bottom: 0;
   border-bottom: 1px dotted #0a0a0b;
+  cursor: pointer;
 }
 
 .teacher-photo {
@@ -700,7 +703,48 @@ body {
 
 .socials {
   display: flex;
+}
+.socials_hover {
+  position: absolute;
+  overflow: hidden;
+  max-height: 0;
+  padding: 0;
+  transform: translateY(-20%);
+  opacity: 0;
+  transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
+}
+.socials_hover .socials__container {
   height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  box-shadow: 0px 8px 50px rgba(47, 72, 89, 0.2);
+  border-radius: 80px;
+  padding: 14px 35px 16px;
+  position: relative;
+  z-index: 2;
+}
+.socials_hover .socials__container::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: white;
+  transform: rotate(45deg);
+  top: -6px;
+  z-index: -1;
+}
+.socials_hover.open {
+  top: 100%;
+  padding: 14px;
+  overflow: visible;
+  transform: translateY(0px);
+  opacity: 1;
+  max-height: initial;
+  z-index: 99999;
+  border-radius: 80px;
 }
 .socials a {
   display: block;
@@ -733,6 +777,14 @@ body {
   background-image: url(../img/socials/telegram.svg);
 }
 
+@keyframes clip {
+  0% {
+    clip-path: circle(0 at 50% 50%);
+  }
+  100% {
+    clip-path: center(100% at 50% 50%);
+  }
+}
 /* Popups */
 .popup {
   position: fixed;
@@ -768,7 +820,7 @@ body {
   color: white;
 }
 .popup__close:hover {
-  color: #EB4961;
+  color: #eb4961;
 }
 @media (max-width: 767px) {
   .popup__close {
@@ -793,6 +845,17 @@ body {
   .popup__img {
     max-width: 85vw;
   }
+}
+.popup .socials {
+  height: 70px;
+}
+.popup-detail {
+  margin-top: 300px;
+}
+.popup-detail .popup__close {
+  top: 35px;
+  right: 35px;
+  color: #b3b3bf;
 }
 
 /* Сториз */
@@ -1049,7 +1112,63 @@ body {
   }
 }
 
-/* Меню */
+/* Детальные описания */
+.detail {
+  max-width: 1010px;
+  /* max-height: 85vh; */
+  padding: 100px;
+  background: #ffffff;
+  border: 1px solid #dde9f0;
+  box-shadow: 0px 10px 60px rgba(47, 72, 89, 0.12);
+  border-radius: 35px;
+}
+.detail__title {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 130%;
+  /* identical to box height, or 78px */
+  color: #006eb8;
+  margin-bottom: 35px;
+}
+.detail__content {
+  margin-bottom: 30px;
+}
+.detail__content h3,
+.detail__content h2 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 140%;
+  margin-bottom: 10px;
+}
+.detail__content p {
+  font-size: 18px;
+  line-height: 140%;
+  margin-bottom: 10px;
+}
+.detail__content ul {
+  margin-bottom: 40px;
+}
+.detail__content li {
+  padding-left: 20px;
+  font-size: 18px;
+  line-height: 140%;
+  margin-bottom: 6px;
+  position: relative;
+}
+.detail__content li::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: #0a0a0b;
+  display: block;
+  border-radius: 50%;
+  top: 10px;
+  left: 5px;
+}
+.detail .signup {
+  max-width: 260px;
+} /* Меню */
 .menu {
   display: flex;
   align-items: center;
@@ -1069,7 +1188,15 @@ body {
 
 /* Шапка */
 .header {
+  width: 100%;
+  z-index: 99999;
+  transition: all 0.25s ease-out;
   padding: 55px 0 24px;
+}
+.header_fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 .header__container {
   display: grid;
@@ -1094,6 +1221,11 @@ body {
   right: 508px;
   border-radius: 50%;
 }
+.images__girl, .images__teacher, .images__boy {
+  animation: clip 1s ease-out;
+  clip-path: circle(100% at 50% 50%);
+  animation-delay: 0.5s;
+}
 .images__teacher {
   right: 0;
   top: -30px;
@@ -1103,6 +1235,7 @@ body {
   right: 255px;
 }
 .images__bird-blue {
+  /*   animation: floatedLay 2s ease-in-out infinite; */
   top: 24px;
   right: 520px;
 }

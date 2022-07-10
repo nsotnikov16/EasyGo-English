@@ -1,10 +1,43 @@
+/* Анимации */
+AOS.init();
+
+/* const header = document.querySelector('.header')
+const setPositionHeader = () => {
+    const scroll = Math.ceil(window.scrollY)
+    if (scroll >= 400) header.classList.add('header_fixed')
+    if (scroll < 400) header.classList.remove('header_fixed')
+}
+setPositionHeader()
+window.addEventListener('scroll', setPositionHeader) */
+
+
 const swiperBanner = new Swiper('.banner .swiper', {
     loop: true,
-
+    autoplay: {
+        delay: 3000,
+    },
     pagination: {
         el: '.banner .swiper-pagination',
         clickable: true
-    }
+    },
+    on: {
+        slideChange: function () {
+            const bannersSlides = document.querySelectorAll('.banner .swiper .swiper-slide')
+            setTimeout(() => {
+                bannersSlides.forEach(item => {
+                    const title = item.querySelector('.banner__title')
+                    const subTitle = item.querySelector('.banner__subtitle')
+                    const signup = item.querySelector('.banner .signup')
+                    const arr = [title, subTitle, signup]
+                    arr.forEach(el => el.classList.remove('aos-animate'))
+                    if (item.classList.contains('swiper-slide-active')) arr.forEach(el => el.classList.add('aos-animate'))
+                })
+            }, 50)
+        },
+        init: function () {
+            /*  document.querySelector('.swiper-banners .swiper-slide .banners__banner').classList.add('_animate') */
+        }
+    },
 })
 
 const swiperPhoto = new Swiper('.swiper-photo', {
@@ -216,3 +249,57 @@ class Stories {
 }
 
 const stories = new Stories()
+
+// Плавный скролл
+const anchors = [].slice.call(document.querySelectorAll('.scroll')),
+    animationTime = 400,
+    framesCount = 30;
+
+function scroll(item) {
+    let element = document.querySelector(item.getAttribute('href'))
+    if (!element) return
+    // для каждого якоря берем соответствующий ему элемент и определяем его координату Y
+    let coordY = element.getBoundingClientRect().top + window.pageYOffset;
+
+    // запускаем интервал, в котором
+    let scroller = setInterval(function () {
+        // считаем на сколько скроллить за 1 такт
+        let scrollBy = coordY / framesCount;
+
+        // если к-во пикселей для скролла за 1 такт больше расстояния до элемента
+        // и дно страницы не достигнуто
+        if (scrollBy > window.pageYOffset - coordY && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
+            // то скроллим на к-во пикселей, которое соответствует одному такту
+            window.scrollBy(0, scrollBy);
+        } else {
+            // иначе добираемся до элемента и выходим из интервала
+            window.scrollTo(0, coordY);
+            clearInterval(scroller);
+        }
+        // время интервала равняется частному от времени анимации и к-ва кадров
+    }, animationTime / framesCount);
+
+}
+
+anchors.forEach(item => item.addEventListener('click', (e) => {
+    e.preventDefault()
+    scroll(item)
+}))
+
+
+const isMobile = /Mobile|webOS|BlackBerry|IEMobile|MeeGo|mini|Fennec|Windows Phone|Android|iP(ad|od|hone)/i.test(navigator.userAgent);
+document.addEventListener('DOMContentLoaded', () => {
+    const signups = document.querySelectorAll('[data-socials="true"]')
+    const messengers = document.querySelector('.socials_hover')
+    signups.forEach(item => item.addEventListener(isMobile ? 'click' : 'mouseenter', () => {
+        item.append(messengers)
+        setTimeout(() => messengers.classList.add('open'), 100)
+    }))
+
+    document.addEventListener(isMobile ? 'click' : 'mousemove', (e) => {
+        if (!e.target.closest('.socials_hover') && !e.target.closest('[data-socials="true"]')) messengers.classList.remove('open')
+        /*  if (!e.target.closest('.header__messengers')) inserted.classList.remove('open-list') */
+    })
+})
+
+

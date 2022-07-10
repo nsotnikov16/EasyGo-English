@@ -51,7 +51,7 @@
   }
 
   &_questions {
-    padding:  100px 0 167px;
+    padding: 100px 0 167px;
   }
 
   &_contacts {
@@ -90,6 +90,10 @@
       background: #ffb547 !important;
       color: white;
     }
+  }
+
+  &[data-socials="true"] {
+    position: relative;
   }
 
   &:hover {
@@ -224,13 +228,13 @@
 }
 
 .more {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 140%;
-  color: #0a0a0b;
+  font-weight: 600;
+  font-size: 24px;
+  color: #ff2f4e;
   opacity: 0.7;
-  padding-bottom: 2px;
+  padding-bottom: 0;
   border-bottom: 1px dotted #0a0a0b;
+  cursor: pointer;
 }
 
 .teacher-photo {
@@ -268,11 +272,54 @@
   line-height: 150%;
 }
 
-
 .socials {
   display: flex;
-  height: 70px;
 
+  &_hover {
+    position: absolute;
+    overflow: hidden;
+    max-height: 0;
+    padding: 0;
+    transform: translateY(-20%);
+    opacity: 0;
+    transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
+
+    .socials__container {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      background: #ffffff;
+      box-shadow: 0px 8px 50px rgba(47, 72, 89, 0.2);
+      border-radius: 80px;
+      padding: 14px 35px 16px;
+      position: relative;
+      z-index: 2;
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 12px;
+        height: 12px;
+        background: white;
+        transform: rotate(45deg);
+        top: -6px;
+        z-index: -1;
+      }
+    }
+
+    &.open {
+      top: 100%;
+      padding: 14px;
+      overflow: visible;
+      transform: translateY(0px);
+      opacity: 1;
+      max-height: initial;
+      z-index: 99999;
+      border-radius: 80px;
+    }
+  }
   a {
     display: block;
     margin-right: 20px;
@@ -302,4 +349,13 @@
 .telegram {
   background-color: #039be5;
   background-image: url(../img/socials/telegram.svg);
+}
+
+@keyframes clip {
+  0% {
+    clip-path: circle(0 at 50% 50%);
+  }
+  100% {
+    clip-path: center(100% at 50% 50%);
+  }
 }

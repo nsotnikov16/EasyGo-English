@@ -1,4 +1,14 @@
 .header {
+  width: 100%;
+
+  z-index: 99999;
+  transition: all 0.25s ease-out;
+
+  &_fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
   padding: 55px 0 24px;
   &__container {
     display: grid;
@@ -15,5 +25,3 @@
     }
   }
 }
-
-

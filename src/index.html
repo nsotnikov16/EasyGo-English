@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 	<title>EasyGo English</title>
 </head>
@@ -46,10 +47,22 @@
 		@@include('html/contacts.html', {})
 	</div>
 
+	<!-- Соц сети при наведении на кнопку "записаться" -->
+	<div class="socials socials_hover">
+		<div class="socials__container">
+			<a href="#" class="whatsapp"></a>
+			<a href="#" class="viber"></a>
+			<a href="#" class="telegram"></a>
+		</div>
+	</div>
 
 	<!-- Сториз (модалки) -->
 	@@include('html/stories.html', {})
 
+	<!-- Модалки детальных описаний -->
+	@@include('html/details.html', {})
+	
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 	<script src="./js/app.js"></script>
 </body>
