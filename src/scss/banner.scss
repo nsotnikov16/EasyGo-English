@@ -26,21 +26,116 @@
   .swiper-pagination-bullet {
     width: 17px;
     height: 17px;
-    background: #006eb8;
+    background: rgba(0, 110, 184, 0.25);
+
+    opacity: 1;
     margin-right: 27px !important;
     margin-left: 0 !important;
+    position: relative;
+    /* animation: circle 3s steps(1, end) forwards; */
     &:last-child {
       margin-right: 0;
     }
     &-active {
-      background-image: url(../img/bullet.svg);
-      background-size: 100%;
-      background-repeat: no-repeat;
-      background-color: transparent;
+      /* 
+      background: rgba(0, 110, 184, 1); */
     }
   }
+}
 
-  > * {
-    user-select: none;
+> * {
+  user-select: none;
+}
+.timer {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: rgba(0, 110, 184, 0.25);
+  overflow: hidden;
+  position: relative;
+  opacity: 1;
+
+  &__body {
+    background: rgba(0, 110, 184, 0.25);
+  }
+  &.swiper-pagination-bullet-active {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      z-index: 3;
+      background-color: rgba(0, 110, 184, 0.25);
+      animation: mask_left 3s steps(1, end) forwards;
+      opacity: 1;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      z-index: 3;
+      background-color: rgba(0, 110, 184, 1);
+      animation: mask_right 3s steps(1, end) forwards;
+      opacity: 1;
+    }
+    .timer__line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      /* background-color: rgba(0, 110, 184, 1); */
+      animation: line 3s linear forwards;
+      opacity: 1;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background-color: rgba(0, 110, 184, 1);
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@keyframes line {
+  0% {
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes mask_left {
+  0% {
+    visibility: visible;
+  }
+
+  50%,
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes mask_right {
+  0% {
+    visibility: hidden;
+  }
+
+  50%,
+  100% {
+    visibility: visible;
   }
 }

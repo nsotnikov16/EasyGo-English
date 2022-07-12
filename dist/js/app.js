@@ -14,11 +14,18 @@ window.addEventListener('scroll', setPositionHeader) */
 const swiperBanner = new Swiper('.banner .swiper', {
     loop: true,
     autoplay: {
-        delay: 3000,
+        delay: 5000,
     },
     pagination: {
         el: '.banner .swiper-pagination',
-        clickable: true
+        clickable: true,
+        renderBullet: function (index, className) {
+            return '<div class="' + className + ' timer' + '">' + ` 
+            <div class="timer__line"></div>
+            <div class="timer__body"></div>` +
+                '</div>';
+
+        },
     },
     on: {
         slideChange: function () {
@@ -113,14 +120,6 @@ class Popup {
         document.body.style.overflow = "hidden";
         this.popupElement.classList.add('popup_opened')
         document.addEventListener('keydown', this._handleEscClose);
-        if (el.tagName === 'PICTURE') {
-            const picture = this.popupElement.querySelector('picture')
-            if (picture) picture.remove()
-            const copyElement = el.cloneNode(true)
-
-            copyElement.removeAttribute('onclick')
-            this.popupElement.querySelector('.popup__content').append(copyElement)
-        }
     }
 
     close() {
@@ -305,3 +304,8 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 
+const aboutMore = document.querySelector('#about .more')
+if (aboutMore) aboutMore.addEventListener(isMobile ? 'click' : 'mouseenter', () => {
+    arrPopups['detail1'].open()
+    isMobile ? '' : aboutMore.addEventListener('click', () => arrPopups['detail1'].open())
+}, { once: true })
