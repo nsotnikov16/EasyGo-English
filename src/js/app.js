@@ -13,8 +13,10 @@ window.addEventListener('scroll', setPositionHeader) */
 
 const swiperBanner = new Swiper('.banner .swiper', {
     loop: true,
+    speed: 1000,
     autoplay: {
-        delay: 5000,
+        delay: 4000,
+       /*  disableOnInteraction: false */
     },
     pagination: {
         el: '.banner .swiper-pagination',
@@ -22,7 +24,7 @@ const swiperBanner = new Swiper('.banner .swiper', {
         renderBullet: function (index, className) {
             return '<div class="' + className + ' timer' + '">' + ` 
             <div class="timer__line"></div>
-            <div class="timer__body"></div>` +
+            ` +
                 '</div>';
 
         },
@@ -34,8 +36,8 @@ const swiperBanner = new Swiper('.banner .swiper', {
                 bannersSlides.forEach(item => {
                     const title = item.querySelector('.banner__title')
                     const subTitle = item.querySelector('.banner__subtitle')
-                    const signup = item.querySelector('.banner .signup')
-                    const arr = [title, subTitle, signup]
+                    /* const signup = item.querySelector('.banner .signup') */
+                    const arr = [title, subTitle, /* signup */]
                     arr.forEach(el => el.classList.remove('aos-animate'))
                     if (item.classList.contains('swiper-slide-active')) arr.forEach(el => el.classList.add('aos-animate'))
                 })
@@ -111,6 +113,7 @@ class Popup {
     constructor(popupElement) {
         this.popupElement = popupElement;
         this._closeButton = this.popupElement.querySelector('.popup__close');
+        this._img = this.popupElement.querySelector('.popup__img') ?? ''
         this._handleEscClose = this._handleEscClose.bind(this)
         this._openingLinks = document.querySelectorAll(`[data-pointer="${this.popupElement.id}"]`)
         this.setEventListeners()
@@ -120,6 +123,7 @@ class Popup {
         document.body.style.overflow = "hidden";
         this.popupElement.classList.add('popup_opened')
         document.addEventListener('keydown', this._handleEscClose);
+        if (this._img && el.src) this._img.src = el.src
     }
 
     close() {

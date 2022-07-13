@@ -817,8 +817,8 @@ body {
 }
 .popup__close {
   position: absolute;
-  top: -20px;
-  right: -20px;
+  top: -35px;
+  right: -35px;
   font-size: 35px;
   color: white;
 }
@@ -1229,9 +1229,9 @@ body {
   border-radius: 50%;
 }
 .images__girl, .images__teacher, .images__boy {
-  animation: clip 1s ease-out;
+  animation: clip 1.2s ease-out;
   clip-path: circle(100% at 50% 50%);
-  animation-delay: 0.5s;
+  animation-delay: 0.2s;
 }
 .images__teacher {
   right: 0;
@@ -1277,24 +1277,26 @@ body {
   padding-bottom: 185px;
 }
 .banner .swiper-pagination {
-  bottom: 20px;
+  /*   bottom: 20px; */
+  position: static;
+  padding-top: 50px;
+  padding-bottom: 25px;
 }
 .banner .swiper-pagination-bullet {
   width: 17px;
   height: 17px;
-  background: rgba(0, 110, 184, 0.25);
   opacity: 1;
   margin-right: 27px !important;
   margin-left: 0 !important;
   position: relative;
-  /* animation: circle 3s steps(1, end) forwards; */
 }
 .banner .swiper-pagination-bullet:last-child {
   margin-right: 0;
 }
-.banner .swiper-pagination-bullet-active {
-  /* 
-  background: rgba(0, 110, 184, 1); */
+.banner .signup {
+  position: absolute;
+  top: 55%;
+  left: 0;
 }
 
 > * {
@@ -1305,13 +1307,10 @@ body {
   width: 17px;
   height: 17px;
   border-radius: 50%;
-  background: rgba(0, 110, 184, 0.25);
+  background: #bfdbed;
   overflow: hidden;
   position: relative;
   opacity: 1;
-}
-.timer__body {
-  background: rgba(0, 110, 184, 0.25);
 }
 .timer.swiper-pagination-bullet-active::before {
   content: "";
@@ -1321,8 +1320,8 @@ body {
   width: 50%;
   height: 100%;
   z-index: 3;
-  background-color: rgba(0, 110, 184, 0.25);
-  animation: mask_left 3s steps(1, end) forwards;
+  background-color: #bfdbed;
+  animation: mask_left 4s steps(1, end) forwards;
   opacity: 1;
 }
 .timer.swiper-pagination-bullet-active::after {
@@ -1333,8 +1332,8 @@ body {
   width: 50%;
   height: 100%;
   z-index: 3;
-  background-color: rgb(0, 110, 184);
-  animation: mask_right 3s steps(1, end) forwards;
+  background-color: #006eb8;
+  animation: mask_right 4s steps(1, end) forwards;
   opacity: 1;
 }
 .timer.swiper-pagination-bullet-active .timer__line {
@@ -1344,8 +1343,7 @@ body {
   width: 100%;
   height: 100%;
   z-index: 2;
-  /* background-color: rgba(0, 110, 184, 1); */
-  animation: line 3s linear forwards;
+  animation: line 4s linear forwards;
   opacity: 1;
 }
 .timer.swiper-pagination-bullet-active .timer__line::after {
@@ -1355,7 +1353,7 @@ body {
   left: 0;
   width: 50%;
   height: 100%;
-  background-color: rgb(0, 110, 184);
+  background-color: #006eb8;
   opacity: 1;
 }
 
@@ -1563,10 +1561,10 @@ body {
   cursor: pointer;
   transform: scale(1);
   border-radius: 15px;
-  transition: transform 0.35s linear;
+  transition: transform 0.25s linear;
 }
 .media__item:hover {
-  transform: scale(1.2);
+  transform: scale(1.15);
   z-index: 30;
 }
 .media__item:hover::after {

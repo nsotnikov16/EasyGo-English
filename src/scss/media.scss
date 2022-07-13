@@ -49,9 +49,9 @@
     transform: scale(1);
     border-radius: 15px;
    
-    transition: transform 0.35s linear;
+    transition: transform 0.25s linear;
     &:hover {
-      transform: scale(1.2);
+      transform: scale(1.15);
       z-index: 30;
       &::after {
         content: "";

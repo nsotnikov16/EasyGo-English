@@ -14,9 +14,9 @@
   &__girl,
   &__teacher,
   &__boy {
-    animation: clip 1s ease-out;
+    animation: clip 1.2s ease-out;
     clip-path: circle(100% at 50% 50%);
-    animation-delay: 0.5s;
+    animation-delay: 0.2s;
   }
 
   &__teacher {
