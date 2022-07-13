@@ -8,17 +8,31 @@
     font-size: 80px;
     line-height: 130%;
     margin-bottom: 33px;
+    @media (max-width: 1919px) {
+      font-size: calc(60px + (10 + 10 * 0.7) * ((100vw - 375px) / 1919));
+      margin-bottom: calc(20px + (8 + 8 * 0.7) * ((100vw - 375px) / 1919));
+    }
   }
 
   &__text {
     font-size: 24px;
     line-height: 140%;
     margin-bottom: 42px;
+    @media (max-width: 1919px) {
+      font-size: calc(18px + (3 + 3 * 0.7) * ((100vw - 375px) / 1919));
+    }
   }
 
   &__col2 {
     display: grid;
     grid-template-columns: max-content max-content;
+    @media (max-width: 1580px) {
+      grid-template-columns: 1fr max-content;
+    }
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &_about {
@@ -27,6 +41,9 @@
     .section__left {
       max-width: 880px;
       margin-right: 165px;
+      @media (max-width: 1580px) {
+        margin-right: 6%;
+      }
     }
   }
 
@@ -35,6 +52,9 @@
     .section__left {
       max-width: 925px;
       margin-right: 120px;
+      @media (max-width: 1580px) {
+        margin-right: 5%;
+      }
     }
   }
 
@@ -43,6 +63,9 @@
     .section__left {
       max-width: 872px;
       margin-right: 170px;
+      @media (max-width: 1580px) {
+        margin-right: 7%;
+      }
     }
   }
 
@@ -60,6 +83,17 @@
 
   &_media {
     padding: 135px 0 113px;
+  }
+
+  &__right {
+    @media (max-width: 1170px) {
+      transform: scale(0.8);
+    }
+
+    @media (max-width: 1024px) {
+      grid-row: 1/2;
+      justify-self: center;
+    }
   }
 }
 
@@ -84,8 +118,13 @@
   background: #eb4961;
   position: relative;
 
-  @media(max-width: 1919px) {
+  @media (max-width: 1919px) {
     min-width: calc(180px + (80 + 80 * 0.7) * ((100vw - 375px) / 1919));
+  }
+
+  @media(max-width: 767px) {
+    font-size: 18px;
+    line-height: 26px;
   }
   &_white {
     color: $main;
@@ -133,6 +172,11 @@
   left: 100%;
   right: 5px;
   top: -35px;
+
+  @media (max-width: 1170px) {
+    left: 90%;
+    transform: scale(0.8);
+  }
 }
 
 .about-video {
@@ -297,7 +341,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      
+
       background: #ffffff;
       box-shadow: 0px 8px 50px rgba(47, 72, 89, 0.2);
       border-radius: 80px;
@@ -305,7 +349,7 @@
       position: relative;
       z-index: 2;
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         display: block;
         width: 12px;

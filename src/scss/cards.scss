@@ -43,7 +43,7 @@
   }
 
   .signup {
-    width: 250px;
+    width: max-content;
     button {
     }
   }
@@ -66,6 +66,14 @@
       max-width: 100%;
     }
   }
+
+  @media(max-width: 1024px) {
+    padding: 39px 30px 60px;
+
+    &_teacher {
+      padding-top: 50px;
+    }
+  }
 }
 .cards {
   margin-top: 62px;
@@ -73,11 +81,28 @@
   grid-template-columns: repeat(3, 1fr);
   justify-content: space-between;
   gap: 30px;
+
+  @media(max-width: 1500px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px
+  }
+
+  @media(max-width: 820px) {
+    grid-template-columns: 1fr;
+  }
   &__card {
   }
 
   &_teachers {
     grid-template-columns: 1fr 1fr;
     gap: 110px;
+
+    @media(max-width: 1580px) {
+      gap: 3%;
+    }
+
+    @media(max-width: 900px) {
+      grid-template-columns: 1fr;
+    }
   }
 }
