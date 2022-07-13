@@ -386,7 +386,12 @@ body {
   margin: 0 auto;
   max-width: 1530px;
 }
-@media (max-width: 1310px) {
+@media (max-width: 1580px) {
+  .page__container {
+    padding: 0 70px;
+  }
+}
+@media (max-width: 1170px) {
   .page__container {
     padding: 0 30px;
   }
@@ -526,6 +531,11 @@ body {
   border-radius: 80px;
   background: #eb4961;
   position: relative;
+}
+@media (max-width: 1919px) {
+  .btn {
+    min-width: calc(180px + 136 * (100vw - 375px) / 1919);
+  }
 }
 .btn_white {
   color: #0a0a0b;
@@ -1171,7 +1181,9 @@ body {
 }
 .detail .signup {
   max-width: 260px;
-} /* Меню */
+}
+
+/* Меню */
 .menu {
   display: flex;
   align-items: center;
@@ -1228,6 +1240,13 @@ body {
   right: 508px;
   border-radius: 50%;
 }
+@media (max-width: 1580px) {
+  .images__girl {
+    top: 50px;
+    right: -35px;
+    max-width: 250px;
+  }
+}
 .images__girl, .images__teacher, .images__boy {
   animation: clip 1.2s ease-out;
   clip-path: circle(100% at 50% 50%);
@@ -1237,28 +1256,66 @@ body {
   right: 0;
   top: -30px;
 }
+@media (max-width: 1580px) {
+  .images__teacher {
+    display: none;
+  }
+}
 .images__boy {
   bottom: 50px;
   right: 255px;
 }
+@media (max-width: 1580px) {
+  .images__boy {
+    right: -35px;
+    max-width: 200px;
+    bottom: initial;
+    top: 275px;
+  }
+}
 .images__bird-blue {
-  /*   animation: floatedLay 2s ease-in-out infinite; */
   top: 24px;
   right: 520px;
+}
+@media (max-width: 1580px) {
+  .images__bird-blue {
+    right: -25px;
+    max-width: 170px;
+    top: 25px;
+  }
 }
 .images__bird-red {
   right: 467px;
   bottom: 285px;
 }
+@media (max-width: 1580px) {
+  .images__bird-red {
+    right: -30px;
+    max-width: 120px;
+    bottom: 420px;
+  }
+}
 .images__bird-blue-right {
   right: -60px;
   bottom: 290px;
+}
+@media (max-width: 1580px) {
+  .images__bird-blue-right {
+    right: -22px;
+    max-width: 90px;
+    bottom: 225px;
+  }
 }
 
 /* Баннер */
 .banner {
   padding: 105px 0 0;
   position: relative;
+}
+@media (max-width: 1580px) {
+  .banner {
+    padding-top: 70px;
+  }
 }
 .banner__title {
   font-weight: 700;
@@ -1267,11 +1324,26 @@ body {
   margin-bottom: 28px;
   max-width: 815px;
 }
+@media (max-width: 1919px) {
+  .banner__title {
+    font-size: calc(40px + 68 * (100vw - 375px) / 1919);
+  }
+}
+@media (max-width: 1280px) {
+  .banner__title {
+    max-width: 75%;
+  }
+}
 .banner__subtitle {
   font-size: 24px;
   line-height: 150%;
   margin-bottom: 29px;
   max-width: 506px;
+}
+@media (max-width: 1919px) {
+  .banner__subtitle {
+    font-size: calc(18px + 10.2 * (100vw - 375px) / 1919);
+  }
 }
 .banner .swiper-wrapper {
   padding-bottom: 185px;
@@ -1281,6 +1353,12 @@ body {
   position: static;
   padding-top: 50px;
   padding-bottom: 25px;
+}
+@media (max-width: 1580px) {
+  .banner .swiper-pagination {
+    padding-top: 25px;
+    padding-bottom: 15px;
+  }
 }
 .banner .swiper-pagination-bullet {
   width: 17px;
@@ -1295,7 +1373,7 @@ body {
 }
 .banner .signup {
   position: absolute;
-  top: 55%;
+  top: 60%;
   left: 0;
 }
 

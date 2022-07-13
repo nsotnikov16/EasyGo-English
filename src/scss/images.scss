@@ -9,6 +9,11 @@
     top: 56px;
     right: 508px;
     border-radius: 50%;
+    @media (max-width: 1580px) {
+      top: 50px;
+      right: -35px;
+      max-width: 250px;
+    }
   }
 
   &__girl,
@@ -22,26 +27,53 @@
   &__teacher {
     right: 0;
     top: -30px;
+    @media (max-width: 1580px) {
+      display: none;
+    }
   }
 
   &__boy {
     bottom: 50px;
     right: 255px;
+    @media (max-width: 1580px) {
+      right: -35px;
+      max-width: 200px;
+      bottom: initial;
+      top: 275px;
+    }
   }
 
   &__bird-blue {
-  /*   animation: floatedLay 2s ease-in-out infinite; */
     top: 24px;
     right: 520px;
+
+    @media (max-width: 1580px) {
+      right: -25px;
+      max-width: 170px;
+      top: 25px;
+    }
   }
 
   &__bird-red {
     right: 467px;
     bottom: 285px;
+
+    @media (max-width: 1580px) {
+      right: -30px;
+      max-width: 120px;
+      bottom: 420px;
+    }
   }
 
   &__bird-blue-right {
     right: -60px;
     bottom: 290px;
+
+    @media (max-width: 1580px) {
+      right: -22px;
+
+      max-width: 90px;
+      bottom: 225px;
+    }
   }
 }

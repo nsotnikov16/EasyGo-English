@@ -83,6 +83,10 @@
   border-radius: 80px;
   background: #eb4961;
   position: relative;
+
+  @media(max-width: 1919px) {
+    min-width: calc(180px + (80 + 80 * 0.7) * ((100vw - 375px) / 1919));
+  }
   &_white {
     color: $main;
     background-color: white;
