@@ -37,12 +37,25 @@
 
   &_about {
     margin: 68px 0 96px;
+    @media (max-width: 1919px) {
+      margin-top: calc(60px + (8 + 8 * 0.7) * ((100vw - 375px) / 1919));
+      margin-bottom: calc(10px + (80 + 80 * 0.7) * ((100vw - 375px) / 1919));
+    }
 
     .section__left {
       max-width: 880px;
       margin-right: 165px;
       @media (max-width: 1580px) {
         margin-right: 6%;
+      }
+    }
+
+    .section__right {
+      @media (max-width: 1024px) {
+        grid-row: 2/3;
+        .about-video {
+          margin-top: -40px;
+        }
       }
     }
   }
@@ -56,6 +69,11 @@
         margin-right: 5%;
       }
     }
+
+    @media (max-width: 1919px) {
+      padding-top: calc(20px + (95 + 95 * 0.7) * ((100vw - 375px) / 1919));
+      padding-bottom: calc(90px + (13 + 13 * 0.7) * ((100vw - 375px) / 1919));
+    }
   }
 
   &_adult {
@@ -67,22 +85,44 @@
         margin-right: 7%;
       }
     }
+
+    @media (max-width: 1919px) {
+      padding-top: calc(45px + (70 + 70 * 0.7) * ((100vw - 375px) / 1919));
+      padding-bottom: calc(78px + (20 + 20 * 0.7) * ((100vw - 375px) / 1919));
+    }
   }
 
   &_teachers {
     padding: 114px 0 100px;
+    @media (max-width: 1919px) {
+      padding-top: calc(79px + (35 + 35 * 0.7) * ((100vw - 375px) / 1919));
+      /* padding-bottom: calc(78px + (20 + 20 * 0.7) * ((100vw - 375px) / 1919)); */
+    }
   }
 
   &_questions {
     padding: 100px 0 167px;
+    @media (max-width: 1919px) {
+      padding-top: calc(80px + (20 + 20 * 0.7) * ((100vw - 375px) / 1919));
+      padding-bottom: calc(120px + (47 + 47 * 0.7) * ((100vw - 375px) / 1919));
+    }
   }
 
   &_contacts {
     padding: 156px 0 70px;
+    @media (max-width: 1919px) {
+      padding-top: calc(100px + (56 + 56 * 0.7) * ((100vw - 375px) / 1919));
+      
+    }
   }
 
   &_media {
     padding: 135px 0 113px;
+
+    @media (max-width: 1919px) {
+      padding-top: calc(60px + (75 + 75 * 0.7) * ((100vw - 375px) / 1919));
+      padding-bottom: calc(65px + (48 + 48 * 0.7) * ((100vw - 375px) / 1919));
+    }
   }
 
   &__right {

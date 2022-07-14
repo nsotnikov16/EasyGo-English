@@ -21,14 +21,12 @@ function animateWord(block) {
         spanWord.classList.add('word')
         block.append(spanWord)
         block.append(space)
-        console.log(spanWord)
 
         word.split('').forEach((letter, ind) => {
             let spanLetter = document.createElement('span');
             spanLetter.innerText = letter;
             spanLetter.classList.add('letter')
             spanWord.append(spanLetter)
-
         })
     })
 
@@ -61,21 +59,22 @@ const swiperBanner = new Swiper('.banner .swiper', {
             setTimeout(() => {
                 bannersSlides.forEach(item => {
                     const title = item.querySelector('.banner__title')
-                    title.innerHTML = ''
+                    const letters = item.querySelectorAll('.letter')
                     const subTitle = item.querySelector('.banner__subtitle')
                     const arr = [title, subTitle]
                     arr.forEach(el => el.classList.remove('aos-animate'))
+                    letters.forEach(letter => letter.classList.remove('letter_animate'))
                     if (item.classList.contains('swiper-slide-active')) {
                         arr.forEach(el => el.classList.add('aos-animate'))
-                        animateWord(title)
+                        letters.forEach(letter => letter.classList.add('letter_animate'))
                     }
                 })
             }, 20)
         },
     },
 })
-/* const titlesBanner = document.querySelectorAll('.banner__title');
-titlesBanner.forEach(title => animateWord(title)) */
+const titlesBanner = document.querySelectorAll('.banner__title');
+titlesBanner.forEach(title => animateWord(title))
 
 let paramsMedia = {
     slidesPerView: 'auto',

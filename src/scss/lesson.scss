@@ -1,5 +1,8 @@
 .lesson {
   margin-bottom: 123px;
+  @media (max-width: 1919px) {
+    margin-bottom: calc(95px + (28 + 28 * 0.7) * ((100vw - 375px) / 1919));
+  }
   &__container {
     display: grid;
     grid-template-columns: 1fr 1fr;

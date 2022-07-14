@@ -1,5 +1,9 @@
 .to-stories {
   margin-top: 72px;
+
+  @media (max-width: 1919px) {
+    margin-top: calc(32px + (40 + 40 * 0.7) * ((100vw - 375px) / 1919));
+  }
   &__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, 152px);

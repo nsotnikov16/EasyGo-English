@@ -2,6 +2,10 @@
   display: grid;
   grid-template-columns: 42.5% 49%;
   justify-content: space-between;
+  @media (max-width: 1580px) {
+    grid-template-columns: 1fr;
+    gap: 5%;
+  }
   &__left {
   }
 
@@ -47,6 +51,17 @@
 
   &__teachers {
     margin-top: 18px;
+
+    @media (max-width: 1580px) {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+      align-items: baseline;
+      gap: 25px;
+    }
+
+    @media (max-width: 840px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__teacher {
@@ -60,6 +75,10 @@
     margin-bottom: 20px;
     &:last-child {
       margin-bottom: 0;
+    }
+
+    @media (max-width: 1580px) {
+      grid-template-columns: 1fr;
     }
   }
 
@@ -118,9 +137,55 @@
     }
     iframe {
       border-radius: 45px;
-      width: 750px;
       height: 750px;
+
+      @media (max-width: 1919px) {
+        height: calc(345px + (400 + 400 * 0.7) * ((100vw - 375px) / 1919));
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 12px;
+
+    &__right {
+      margin-top: 40px;
+      img {
+        &:first-of-type {
+          width: 120px;
+          left: -25px;
+          top: -15px;
+          left: 0;
+        }
+
+        &:last-of-type {
+          width: 92px;
+          right: -10px;
+          bottom: -10px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 840px) {
+    &__left {
+      display: grid;
+      gap: 55px;
+    }
+
+    &__location {
+      flex-direction: column;
+      grid-row: 2/3;
+    }
+
+    .about-video {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+
+    &__right iframe {
+      border-radius: 45px;
     }
   }
 }
-
