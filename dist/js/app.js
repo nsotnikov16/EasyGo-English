@@ -64,14 +64,17 @@ const swiperBanner = new Swiper('.banner .swiper', {
                     const subTitle = item.querySelector('.banner__subtitle')
                     const arr = [title, subTitle]
                     arr.forEach(el => el.classList.remove('aos-animate'))
-                    if (item.classList.contains('swiper-slide-active')) arr.forEach(el => el.classList.add('aos-animate'))
+                    if (item.classList.contains('swiper-slide-active')) {
+                        arr.forEach(el => el.classList.add('aos-animate'))
+                        animateWord(title)
+                    }
                 })
-            }, 50)
+            }, 20)
         },
     },
 })
-const titlesBanner = document.querySelectorAll('.banner__title');
-titlesBanner.forEach(title => animateWord(title))
+/* const titlesBanner = document.querySelectorAll('.banner__title');
+titlesBanner.forEach(title => animateWord(title)) */
 
 let paramsMedia = {
     slidesPerView: 'auto',
