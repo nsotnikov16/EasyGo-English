@@ -61,6 +61,7 @@ const swiperBanner = new Swiper('.banner .swiper', {
             setTimeout(() => {
                 bannersSlides.forEach(item => {
                     const title = item.querySelector('.banner__title')
+                    title.innerHTML = ''
                     const subTitle = item.querySelector('.banner__subtitle')
                     const arr = [title, subTitle]
                     arr.forEach(el => el.classList.remove('aos-animate'))
