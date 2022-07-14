@@ -857,6 +857,25 @@ body {
     clip-path: center(100% at 50% 50%);
   }
 }
+@keyframes letter {
+  0% {
+    transform: translate3d(0, 10%, 0);
+    opacity: 0;
+  }
+  30% {
+    transform: translate3d(0, -10%, 0);
+    opacity: 1;
+  }
+  60% {
+    transform: translate3d(0, 2%, 0);
+  }
+  80% {
+    transform: translate3d(0, -1%, 0);
+  }
+  100% {
+    transform: translateZ(0);
+  }
+}
 /* Popups */
 .popup {
   position: fixed;
@@ -1401,6 +1420,16 @@ body {
   .banner__title {
     max-width: 75%;
   }
+}
+.banner__title .word {
+  white-space: nowrap;
+}
+.banner__title .letter {
+  display: inline-block;
+  animation: letter 1.5s ease-in-out both;
+  transform: translateZ(0);
+  opacity: 1;
+  will-change: transform, opacity;
 }
 .banner__subtitle {
   font-size: 24px;

@@ -11,12 +11,38 @@ setPositionHeader()
 window.addEventListener('scroll', setPositionHeader) */
 
 
+function animateWord(block) {
+    let words = block.dataset.text.split(' ')
+    words.forEach(word => {
+        let spanWord = document.createElement('span')
+        let space = document.createElement('span')
+        space.textContent = " "
+        space.style.display = 'inline'
+        spanWord.classList.add('word')
+        block.append(spanWord)
+        block.append(space)
+        console.log(spanWord)
+
+        word.split('').forEach((letter, ind) => {
+            let spanLetter = document.createElement('span');
+            spanLetter.innerText = letter;
+            spanLetter.classList.add('letter')
+            spanWord.append(spanLetter)
+
+        })
+    })
+
+    const letters = block.querySelectorAll('.letter')
+    letters.forEach((letter, ind) => letter.style.cssText = `animation-delay: ${ind == 0 ? 0 : (ind / 2) / 10}s;`)
+
+}
+
 const swiperBanner = new Swiper('.banner .swiper', {
     loop: true,
     speed: 1000,
     autoplay: {
         delay: 4000,
-       /*  disableOnInteraction: false */
+        disableOnInteraction: false
     },
     pagination: {
         el: '.banner .swiper-pagination',
@@ -36,8 +62,7 @@ const swiperBanner = new Swiper('.banner .swiper', {
                 bannersSlides.forEach(item => {
                     const title = item.querySelector('.banner__title')
                     const subTitle = item.querySelector('.banner__subtitle')
-                    /* const signup = item.querySelector('.banner .signup') */
-                    const arr = [title, subTitle, /* signup */]
+                    const arr = [title, subTitle]
                     arr.forEach(el => el.classList.remove('aos-animate'))
                     if (item.classList.contains('swiper-slide-active')) arr.forEach(el => el.classList.add('aos-animate'))
                 })
@@ -45,6 +70,8 @@ const swiperBanner = new Swiper('.banner .swiper', {
         },
     },
 })
+const titlesBanner = document.querySelectorAll('.banner__title');
+titlesBanner.forEach(title => animateWord(title))
 
 let paramsMedia = {
     slidesPerView: 'auto',
