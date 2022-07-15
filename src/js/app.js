@@ -1,15 +1,21 @@
 /* Анимации */
 AOS.init();
 
-/* const header = document.querySelector('.header')
-const setPositionHeader = () => {
+const header = document.querySelector('.header')
+const headerSocials = header.querySelector('.header__socials')
+const buttonSocials = header.querySelector('.header__socials a:first-child')
+buttonSocials.addEventListener('click', () => {
+    headerSocials.classList.toggle('open-list')
+})
+
+/* const setPositionHeader = () => {
     const scroll = Math.ceil(window.scrollY)
     if (scroll >= 400) header.classList.add('header_fixed')
     if (scroll < 400) header.classList.remove('header_fixed')
 }
 setPositionHeader()
-window.addEventListener('scroll', setPositionHeader) */
-
+window.addEventListener('scroll', setPositionHeader)
+ */
 
 function animateWord(block) {
     let words = block.dataset.text.split(' ')
@@ -87,13 +93,21 @@ let paramsMedia = {
     },
     on: {
         init: function () {
-            media.forEach(item => {
-                if (item.offsetHeight > 845) {
-                    while (item.offsetHeight > 945) {
-                        item.style.width = `${item.offsetWidth + item.offsetWidth * 0.1}px`
-                    }
-                }
-            })
+            media.forEach(item => setWidthMedia(item))
+        }
+    }
+}
+
+function setWidthMedia(item) {
+    if (item.offsetHeight > 845 && window.innerWidth > 767) {
+        while (item.offsetHeight > 945) {
+            item.style.width = `${item.offsetWidth + item.offsetWidth * 0.1}px`
+        }
+    }
+
+    if (item.offsetHeight > 380 && window.innerWidth <= 767) {
+        while (item.offsetHeight > 420) {
+            item.style.width = `${item.offsetWidth + item.offsetWidth * 0.1}px`
         }
     }
 }
@@ -135,6 +149,10 @@ function tabClick(tab) {
         item.classList.remove('tabs__content_active')
         if (item.dataset.tab === tab.dataset.tab) item.classList.add('tabs__content_active')
     })
+
+    if (tab.closest('.section_media')) {
+        media.forEach(item => setWidthMedia(item))
+    }
 }
 
 
@@ -339,7 +357,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 const aboutMore = document.querySelector('#about .more')
-if (aboutMore) aboutMore.addEventListener(isMobile ? 'click' : 'mouseenter', () => {
-    arrPopups['detail1'].open()
-    isMobile ? '' : aboutMore.addEventListener('click', () => arrPopups['detail1'].open())
-}, { once: true })
+const tooltip = document.querySelector('.tooltip')
+if (aboutMore && tooltip) {
+    aboutMore.addEventListener(isMobile ? 'click' : 'mouseenter', () => tooltip.classList.add('tooltip_show'))
+    //aboutMore.addEventListener(isMobile ? 'click' : 'mouseout', () => tooltip.classList.remove('tooltip_show'))
+    document.addEventListener(isMobile ? 'click' : 'mouseout', ({ target }) => {
+        if (target !== aboutMore && !target.closest('.tooltip')) tooltip.classList.remove('tooltip_show')
+    })
+} 

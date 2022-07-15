@@ -17,6 +17,7 @@
   }
 
   &__left {
+    z-index: 4;
     max-width: 710px;
     padding: 112px 0 107px 90px;
     @media (max-width: 1400px) {

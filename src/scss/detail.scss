@@ -1,7 +1,8 @@
 .detail {
   max-width: 1010px;
-  /* max-height: 85vh; */
-  
+  @media (max-width: 1919px) {
+    padding: calc(20px + (80 + 80 * 0.7) * ((100vw - 375px) / 1919));
+  }
   padding: 100px;
   background: #ffffff;
   border: 1px solid #dde9f0;

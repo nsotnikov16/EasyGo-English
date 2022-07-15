@@ -4,7 +4,7 @@
   justify-content: space-between;
   @media (max-width: 1580px) {
     grid-template-columns: 1fr;
-    gap: 5%;
+    gap: 30px;
   }
   &__left {
   }
@@ -47,6 +47,10 @@
         margin-bottom: 0;
       }
     }
+
+    @media (max-width: 767px) {
+      font-size: 24px;
+    }
   }
 
   &__teachers {
@@ -79,6 +83,10 @@
 
     @media (max-width: 1580px) {
       grid-template-columns: 1fr;
+    }
+
+    @media (max-width: 767px) {
+      gap: 8px;
     }
   }
 
@@ -114,6 +122,10 @@
     &:hover {
       color: #eb4961;
     }
+
+    @media (max-width: 767px) {
+      font-size: 30px;
+    }
   }
 
   &__teacher-socials {
@@ -139,8 +151,12 @@
       border-radius: 45px;
       height: 750px;
 
-      @media (max-width: 1919px) {
-        height: calc(345px + (400 + 400 * 0.7) * ((100vw - 375px) / 1919));
+      @media (max-width: 1580px) {
+        height: 400px;
+      }
+
+      @media (max-width: 420px) {
+        height: 345px;
       }
     }
   }
