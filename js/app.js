@@ -152,9 +152,9 @@ function tabClick(tab) {
     })
 
     if (tab.closest('.section_media')) {
-        setWidthMedia(document.querySelector(`.tabs__content_active .swiper-wrapper`))
         let swiper = tab.dataset.tab === '1' ? swiperPhoto : swiperVideo
         swiper.update()
+        setWidthMedia(document.querySelector(`.tabs__content_active .swiper-wrapper`))
     }
 }
 
@@ -165,6 +165,8 @@ class Popup {
         this.popupElement = popupElement;
         this._closeButton = this.popupElement.querySelector('.popup__close');
         this._img = this.popupElement.querySelector('.popup__img') ?? ''
+        this._video = this.popupElement.querySelector('.video') ?? ''
+        this._videoClone = this._video ? this._video.innerHTML : ''
         this._handleEscClose = this._handleEscClose.bind(this)
         this._openingLinks = document.querySelectorAll(`[data-pointer="${this.popupElement.id}"]`)
         this.setEventListeners()
@@ -175,6 +177,7 @@ class Popup {
         this.popupElement.classList.add('popup_opened')
         document.addEventListener('keydown', this._handleEscClose);
         if (this._img && el.src) this._img.src = el.src
+        if (this._video) this._video.innerHTML = this._videoClone
     }
 
     close() {
@@ -182,6 +185,7 @@ class Popup {
         document.body.style.overflow = "visible";
         document.removeEventListener('keydown', this._handleEscClose);
         if (this.popupElement.id === 'stories') stories.reset()
+        if (this._video) this._video.innerHTML = ''
     }
 
     _handleEscClose(evt) {
@@ -368,6 +372,28 @@ if (aboutMore && tooltip) {
     //aboutMore.addEventListener(isMobile ? 'click' : 'mouseout', () => tooltip.classList.remove('tooltip_show'))
     document.addEventListener(isMobile ? 'click' : 'mouseout', ({ target }) => {
         if (target !== aboutMore && !target.closest('.tooltip')) tooltip.classList.remove('tooltip_show')
+    })
+}
+
+
+const panel = document.querySelector('.panel')
+if (panel) {
+    const panelSocials = panel.querySelector('.panel__socials')
+    const links = panelSocials.querySelectorAll('a')
+    links.forEach((link, index) => {
+        const className = link.className
+        if (index == 0) {
+            link.addEventListener('click', (e) => {
+                e.preventDefault()
+                panelSocials.classList.toggle('panel__socials_open')
+            })
+        } else {
+            link.addEventListener('click', ({ target }) => {
+                links[0].setAttribute('class', link.className)
+                panelSocials.classList.remove('panel__socials_open')
+            })
+        }
+
     })
 }
 
