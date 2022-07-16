@@ -2537,6 +2537,11 @@ body.loading > *:not(.preloader) {
 .swiper-video .swiper-scrollbar-drag {
   background: #006eb8;
 }
+.swiper-photo .swiper-wrapper,
+.swiper-video .swiper-wrapper {
+  height: 220%;
+  width: max-content;
+}
 
 /* Спойлеры */
 .spoiler {

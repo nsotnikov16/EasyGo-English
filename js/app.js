@@ -100,17 +100,7 @@ let paramsMedia = {
 }
 
 function setWidthMedia(item) {
-    if (item.offsetHeight > 845 && window.innerWidth > 767) {
-        while (item.offsetHeight > 945) {
-            item.style.width = `${item.offsetWidth + item.offsetWidth * 0.1}px`
-        }
-    }
-
-    if (item.offsetHeight > 380 && window.innerWidth <= 767) {
-        while (item.offsetHeight > 420) {
-            item.style.width = `${item.offsetWidth + item.offsetWidth * 0.1}px`
-        }
-    }
+    item.style.width = `${item.offsetWidth - (item.offsetWidth * 0.25)}px`
 }
 
 const media = [document.querySelector('.swiper-photo .swiper-wrapper'), document.querySelector('.swiper-video .swiper-wrapper')]
