@@ -1,6 +1,7 @@
 /* Анимации */
 AOS.init();
 
+// Мобильное меню
 const header = document.querySelector('.header')
 const headerSocials = header.querySelector('.header__socials')
 const buttonSocials = header.querySelector('.header__socials a:first-child')
@@ -9,6 +10,8 @@ const burgerPanel = document.querySelector('.panel__item')
 buttonSocials.addEventListener('click', () => headerSocials.classList.toggle('open-list'))
 burger.addEventListener('click', () => header.classList.toggle('header_show-mobile'))
 burgerPanel.addEventListener('click', () => header.classList.add('header_show-mobile'))
+
+/* Нижняя панель на мобилке */
 const bottomPanel = document.querySelector('.panel')
 const setPositionPanel = () => {
     const scroll = Math.ceil(window.scrollY)
@@ -17,6 +20,34 @@ const setPositionPanel = () => {
 }
 setPositionPanel()
 window.addEventListener('scroll', setPositionPanel)
+
+
+/* Скролл учителeq */
+const teachers = document.querySelectorAll('.card_teacher')
+/* if (teachers.length > 0) {
+
+    teachers.forEach(teacher => {
+        let box = teacher.getBoundingClientRect();
+        let coordinates = {
+            top: box.top + window.pageYOffset,
+            right: box.right + window.pageXOffset,
+            bottom: box.bottom + window.pageYOffset,
+            left: box.left + window.pageXOffset
+        };
+
+        window.addEventListener('scroll', () => {
+            const scroll = Math.ceil(window.scrollY)
+            let height = teacher.offsetHeight
+            if (scroll > coordinates.bottom - height / 3) {
+                teacher.classList.add('scroll-card')
+                teacher.style.maxHeight = `${bottom - top / 3}`
+            }
+            else {
+                teacher.classList.remove('scroll-card')
+            }
+        })
+    })
+} */
 
 function animateWord(block) {
     let words = block.dataset.text.split(' ')
