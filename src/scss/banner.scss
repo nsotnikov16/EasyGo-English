@@ -123,7 +123,7 @@ $speed: 5.02s;
       display: block;
       height: 1px;
       width: 1px;
-      border-width: $size/2;
+      border-width: calc($size/2);
       border-style: solid;
       border-left-color: transparent;
       border-right-color: $color-border;

@@ -1795,7 +1795,7 @@ body.loading > *:not(.preloader) {
   }
 }
 .header__mobile .menu {
-  display: flex;
+  display: flex !important;
   flex-direction: column;
 }
 @media (min-width: 561px) {
