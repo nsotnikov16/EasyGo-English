@@ -2539,8 +2539,7 @@ body.loading > *:not(.preloader) {
 }
 .swiper-photo .swiper-wrapper,
 .swiper-video .swiper-wrapper {
-  height: 220%;
-  width: max-content;
+  /* width: max-content; */
 }
 
 /* Спойлеры */
