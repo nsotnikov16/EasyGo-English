@@ -52,13 +52,6 @@ const swiperBanner = new Swiper('.banner .swiper', {
     pagination: {
         el: '.banner .swiper-pagination',
         clickable: true,
-        /* renderBullet: function (index, className) {
-            return '<div class="' + className + ' timer' + '">' + ` 
-            <div class="timer__line"></div>
-            ` +
-                '</div>';
-
-        }, */
         renderBullet: function (index, className) {
             return `<div class="timer ${className}">
             <span class="timer__runner"></span>
@@ -374,4 +367,10 @@ if (aboutMore && tooltip) {
     document.addEventListener(isMobile ? 'click' : 'mouseout', ({ target }) => {
         if (target !== aboutMore && !target.closest('.tooltip')) tooltip.classList.remove('tooltip_show')
     })
-} 
+}
+
+
+window.onload = () => {
+    document.body.classList.remove('loading')
+    swiperBanner.slideToLoop(0, 500, false)
+}
