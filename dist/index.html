@@ -11,7 +11,9 @@
 	<title>EasyGo English</title>
 </head>
 
-<body>
+<body class="loading">
+
+
 	<div class="page">
 
 		<!-- Шапка -->
@@ -170,7 +172,7 @@
         </div>
         <div class="section__right content">
             <div class="about-video" data-aos="zoom-in-up" data-aos-duration="900">
-                <div>
+                <div data-pointer="video">
                     <button></button>
                 </div>
                 <p><span class="color">Посмотрите</span><br>за 2 минуты просто и ясно, как мы обучаем</p>
@@ -638,7 +640,7 @@
             <div class="contacts__left">
                 <div class="contacts__location">
                     <div class="about-video">
-                        <div>
+                        <div data-pointer="video">
                             <button></button>
                         </div>
                         <b>Как пройти</b>
@@ -879,6 +881,23 @@
     </div>
 </div>
 
+	<!-- Модалка фрейма видео -->
+	<div id="video" class="popup">
+    <div class="popup__container">
+        <div class="popup__content">
+            <div class="video">
+
+                <!-- Убрать атрибуты width, height. В атрибуте allow убрать значение autoplay -->
+                <iframe  src="https://www.youtube.com/embed/FmzHq3U0UFE"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+        <button class="popup__close"><span>&#10006;</span></button>
+    </div>
+</div>
+
 	<!-- Нижняя панель на мобилке -->
 	<div class="panel">
     <ul class="panel__list">
@@ -916,6 +935,23 @@
     </ul>
 </div>
 
+	<!-- Прелоадер -->
+	<div class="preloader">
+    <div class="lds-default">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
 
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

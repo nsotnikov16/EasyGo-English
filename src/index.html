@@ -11,7 +11,9 @@
 	<title>EasyGo English</title>
 </head>
 
-<body>
+<body class="loading">
+
+
 	<div class="page">
 
 		<!-- Шапка -->
@@ -66,9 +68,14 @@
 	<!-- Модалка изображений -->
 	@@include('html/image.html', {})
 
+	<!-- Модалка фрейма видео -->
+	@@include('html/video.html', {})
+
 	<!-- Нижняя панель на мобилке -->
 	@@include('html/panel.html', {})
 
+	<!-- Прелоадер -->
+	@@include('html/preloader.html', {})
 
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

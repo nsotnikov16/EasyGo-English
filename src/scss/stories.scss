@@ -3,12 +3,11 @@
   background-color: white;
   border-radius: 35px;
   max-width: 490px;
-  max-height: 87vh;
+  max-height: 95vh;
   position: relative;
 
   @media (max-width: 767px) {
     max-width: 90vw;
-    /* height: 90vh; */
   }
 
   .swiper-button-next,
@@ -120,7 +119,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 80%;
+    max-width: 100%;
   }
 
   &__swiper {

@@ -47,6 +47,7 @@
   }
 
   &__img {
+    margin-top: 2px;
     width: 152px;
     height: 152px;
     border-radius: 50%;
@@ -104,6 +105,7 @@
       width: 100vw;
       overflow: auto;
       padding-right: 0;
+      overflow-y: hidden;
     }
   }
 }

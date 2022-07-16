@@ -12,8 +12,6 @@
     font-weight: 700;
     font-size: 60px;
     line-height: 130%;
-    /* identical to box height, or 78px */
-
     color: #006eb8;
     margin-bottom: 35px;
   }
@@ -35,7 +33,7 @@
     }
 
     ul {
-        margin-bottom: 40px;
+      margin-bottom: 40px;
     }
 
     li {
@@ -55,6 +53,53 @@
         top: 10px;
         left: 5px;
       }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    max-width: 90vw;
+    &__title {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    &__content {
+      margin-bottom: 20px;
+
+      h3,
+      h2 {
+        font-size: 20px;
+        margin-bottom: 8px;
+      }
+
+      p {
+        font-size: 14px;
+        margin-bottom: 8px;
+      }
+
+      ul {
+        margin-bottom: 20px;
+      }
+
+      li {
+        font-size: 14px;
+
+        &::before {
+        /*   content: "";
+          position: absolute;
+          width: 4px;
+          height: 4px;
+          background-color: #0a0a0b;
+          display: block;
+          border-radius: 50%;
+          top: 10px;
+          left: 5px; */
+        }
+      }
+    }
+
+    .signup {
+      width: max-content;
     }
   }
 

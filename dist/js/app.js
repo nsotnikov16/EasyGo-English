@@ -46,25 +46,24 @@ const swiperBanner = new Swiper('.banner .swiper', {
     loop: true,
     speed: 1000,
     autoplay: {
-        delay: 4000,
+        delay: 5000,
         disableOnInteraction: false
     },
     pagination: {
         el: '.banner .swiper-pagination',
         clickable: true,
         renderBullet: function (index, className) {
-            return '<div class="' + className + ' timer' + '">' + ` 
-            <div class="timer__line"></div>
-            ` +
-                '</div>';
-
-        },
+            return `<div class="timer ${className}">
+            <span class="timer__runner"></span>
+            <span class="timer__runner timer__runner--stay"></span>
+            <span class="timer__runner timer__runner--bg"></span>
+          </div>`
+        }
     },
     on: {
         slideChange: function () {
-            const bannersSlides = document.querySelectorAll('.banner .swiper .swiper-slide')
             setTimeout(() => {
-                bannersSlides.forEach(item => {
+                this.slides.forEach(item => {
                     const title = item.querySelector('.banner__title')
                     const letters = item.querySelectorAll('.letter')
                     const subTitle = item.querySelector('.banner__subtitle')
@@ -77,6 +76,7 @@ const swiperBanner = new Swiper('.banner .swiper', {
                     }
                 })
             }, 20)
+
         },
     },
 })
@@ -94,13 +94,15 @@ let paramsMedia = {
     },
     on: {
         init: function () {
-            media.forEach(item => setWidthMedia(item))
+            setWidthMedia(this.wrapperEl)
         }
     }
 }
 
 function setWidthMedia(item) {
-    if (item.offsetHeight > 845 && window.innerWidth > 767) {
+    item.style.width = 'max-content'
+    item.style.width = `${item.offsetWidth / 1.96}px`
+    /* if (item.offsetHeight > 845 && window.innerWidth > 767) {
         while (item.offsetHeight > 945) {
             item.style.width = `${item.offsetWidth + item.offsetWidth * 0.1}px`
         }
@@ -110,10 +112,8 @@ function setWidthMedia(item) {
         while (item.offsetHeight > 420) {
             item.style.width = `${item.offsetWidth + item.offsetWidth * 0.1}px`
         }
-    }
+    } */
 }
-
-const media = [document.querySelector('.swiper-photo .swiper-wrapper'), document.querySelector('.swiper-video .swiper-wrapper')]
 const swiperPhoto = new Swiper('.swiper-photo', paramsMedia)
 const swiperVideo = new Swiper('.swiper-video', paramsMedia)
 
@@ -152,7 +152,9 @@ function tabClick(tab) {
     })
 
     if (tab.closest('.section_media')) {
-        media.forEach(item => setWidthMedia(item))
+        let swiper = tab.dataset.tab === '1' ? swiperPhoto : swiperVideo
+        swiper.update()
+        setWidthMedia(document.querySelector(`.tabs__content_active .swiper-wrapper`))
     }
 }
 
@@ -163,6 +165,8 @@ class Popup {
         this.popupElement = popupElement;
         this._closeButton = this.popupElement.querySelector('.popup__close');
         this._img = this.popupElement.querySelector('.popup__img') ?? ''
+        this._video = this.popupElement.querySelector('.video') ?? ''
+        this._videoClone = this._video ? this._video.innerHTML : ''
         this._handleEscClose = this._handleEscClose.bind(this)
         this._openingLinks = document.querySelectorAll(`[data-pointer="${this.popupElement.id}"]`)
         this.setEventListeners()
@@ -173,6 +177,7 @@ class Popup {
         this.popupElement.classList.add('popup_opened')
         document.addEventListener('keydown', this._handleEscClose);
         if (this._img && el.src) this._img.src = el.src
+        if (this._video) this._video.innerHTML = this._videoClone
     }
 
     close() {
@@ -180,6 +185,7 @@ class Popup {
         document.body.style.overflow = "visible";
         document.removeEventListener('keydown', this._handleEscClose);
         if (this.popupElement.id === 'stories') stories.reset()
+        if (this._video) this._video.innerHTML = ''
     }
 
     _handleEscClose(evt) {
@@ -367,4 +373,32 @@ if (aboutMore && tooltip) {
     document.addEventListener(isMobile ? 'click' : 'mouseout', ({ target }) => {
         if (target !== aboutMore && !target.closest('.tooltip')) tooltip.classList.remove('tooltip_show')
     })
-} 
+}
+
+
+const panel = document.querySelector('.panel')
+if (panel) {
+    const panelSocials = panel.querySelector('.panel__socials')
+    const links = panelSocials.querySelectorAll('a')
+    links.forEach((link, index) => {
+        const className = link.className
+        if (index == 0) {
+            link.addEventListener('click', (e) => {
+                e.preventDefault()
+                panelSocials.classList.toggle('panel__socials_open')
+            })
+        } else {
+            link.addEventListener('click', ({ target }) => {
+                links[0].setAttribute('class', link.className)
+                panelSocials.classList.remove('panel__socials_open')
+            })
+        }
+
+    })
+}
+
+
+window.onload = () => {
+    document.body.classList.remove('loading')
+    swiperBanner.slideToLoop(0, 500, false)
+}
