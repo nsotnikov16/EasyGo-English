@@ -100,7 +100,7 @@ let paramsMedia = {
 }
 
 function setWidthMedia(item) {
-
+    item.style.width = 'max-content'
     item.style.width = `${item.offsetWidth / 1.96}px`
     /* if (item.offsetHeight > 845 && window.innerWidth > 767) {
         while (item.offsetHeight > 945) {
@@ -152,7 +152,9 @@ function tabClick(tab) {
     })
 
     if (tab.closest('.section_media')) {
-        media.forEach(item => setWidthMedia(item))
+        setWidthMedia(document.querySelector(`.tabs__content_active .swiper-wrapper`))
+        let swiper = tab.dataset.tab === '1' ? swiperPhoto : swiperVideo
+        swiper.update()
     }
 }
 

@@ -2543,6 +2543,7 @@ body.loading > *:not(.preloader) {
 .swiper-photo .swiper-wrapper,
 .swiper-video .swiper-wrapper {
   width: max-content;
+  margin-left: 0;
 }
 
 /* Спойлеры */
