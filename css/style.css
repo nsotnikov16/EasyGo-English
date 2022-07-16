@@ -1931,6 +1931,7 @@ body {
   background-color: #bfdbed;
   animation: mask_left 4s steps(1, end) forwards;
   opacity: 1;
+  overflow: hidden;
 }
 .timer.swiper-pagination-bullet-active::after {
   content: "";
@@ -1943,6 +1944,7 @@ body {
   background-color: #006eb8;
   animation: mask_right 4s steps(1, end) forwards;
   opacity: 1;
+  overflow: hidden;
 }
 .timer.swiper-pagination-bullet-active .timer__line {
   position: absolute;
@@ -1953,6 +1955,7 @@ body {
   z-index: 2;
   animation: line 4s linear forwards;
   opacity: 1;
+  overflow: hidden;
 }
 .timer.swiper-pagination-bullet-active .timer__line::after {
   content: "";
@@ -1963,6 +1966,7 @@ body {
   height: 100%;
   background-color: #006eb8;
   opacity: 1;
+  overflow: hidden;
 }
 
 @keyframes line {
