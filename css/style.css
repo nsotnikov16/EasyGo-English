@@ -1873,6 +1873,9 @@ body {
   position: static;
   padding-top: 50px;
   padding-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media (max-width: 1580px) {
   .banner .swiper-pagination {
@@ -1894,7 +1897,7 @@ body {
   position: relative;
 }
 .banner .swiper-pagination-bullet:last-child {
-  margin-right: 0;
+  margin-right: 0 !important;
 }
 .banner .signup {
   position: absolute;
@@ -1911,7 +1914,7 @@ body {
   user-select: none;
 }
 
-.timer {
+/* .timer {
   width: 17px;
   height: 17px;
   border-radius: 50%;
@@ -1919,79 +1922,161 @@ body {
   overflow: hidden;
   position: relative;
   opacity: 1;
-}
-.timer.swiper-pagination-bullet-active::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  z-index: 3;
-  background-color: #bfdbed;
-  animation: mask_left 4s steps(1, end) forwards;
-  opacity: 1;
-  overflow: hidden;
-  border-radius: 50% 0 0 50%;
-}
-.timer.swiper-pagination-bullet-active::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%;
-  height: 100%;
-  z-index: 3;
-  background-color: #006eb8;
-  animation: mask_right 4s steps(1, end) forwards;
-  opacity: 1;
-  overflow: hidden;
-  border-radius: 0 50% 50% 0;
-}
-.timer.swiper-pagination-bullet-active .timer__line {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  animation: line 4s linear forwards;
-  opacity: 1;
-  overflow: hidden;
-  border-radius: 50%;
-}
-.timer.swiper-pagination-bullet-active .timer__line::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  background-color: #006eb8;
-  opacity: 1;
-  overflow: hidden;
-  border-radius: 50% 0 0 50%;
+
+  &.swiper-pagination-bullet-active {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      z-index: 3;
+      background-color: #bfdbed;
+      animation: mask_left 4s steps(1, end) forwards;
+      opacity: 1;
+      overflow: hidden;
+      border-radius: 50% 0 0 50%;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      z-index: 3;
+      background-color: #006eb8;
+      animation: mask_right 4s steps(1, end) forwards;
+      opacity: 1;
+      overflow: hidden;
+      border-radius: 0 50% 50% 0;
+    }
+    .timer__line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      animation: line 4s linear forwards;
+      opacity: 1;
+      overflow: hidden;
+      border-radius: 50%;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background-color: #006eb8;
+        opacity: 1;
+        overflow: hidden;
+        border-radius: 50% 0 0 50%;
+      }
+    }
+  }
 }
 
 @keyframes line {
+  0% {
+  }
+
   100% {
     transform: rotate(360deg);
   }
 }
+
 @keyframes mask_left {
   0% {
     visibility: visible;
   }
-  50%, 100% {
+
+  50%,
+  100% {
     visibility: hidden;
   }
 }
+
 @keyframes mask_right {
   0% {
     visibility: hidden;
   }
-  50%, 100% {
+
+  50%,
+  100% {
     visibility: visible;
+  }
+} */
+.timer {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  background-color: #bfdbed;
+}
+.timer.swiper-pagination-bullet-active .timer__runner {
+  position: absolute;
+  z-index: 3;
+  background-color: transparent;
+  border-radius: 100%;
+  display: block;
+  height: 1px;
+  width: 1px;
+  border-width: 8.5px;
+  border-style: solid;
+  border-left-color: transparent;
+  border-right-color: #006eb8;
+  border-top-color: #006eb8;
+  border-bottom-color: transparent;
+  transform: rotateZ(45deg);
+  box-sizing: border-box;
+  animation-name: timer_rotate2;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+.timer.swiper-pagination-bullet-active .timer__runner--bg {
+  animation-name: timer_rotate1;
+  border-left-color: transparent;
+  border-right-color: #bfdbed;
+  border-top-color: #bfdbed;
+  border-bottom-color: transparent;
+}
+.timer.swiper-pagination-bullet-active .timer__runner--stay {
+  animation-name: none;
+}
+
+@keyframes timer_rotate1 {
+  0% {
+    transform: rotateZ(45deg);
+  }
+  50% {
+    transform: rotateZ(225deg);
+  }
+  to {
+    transform: rotateZ(225deg);
+  }
+}
+@keyframes timer_rotate2 {
+  0% {
+    transform: rotateZ(44deg);
+  }
+  49% {
+    z-index: 3;
+  }
+  50% {
+    transform: rotateZ(45deg);
+    z-index: 4;
+  }
+  to {
+    transform: rotateZ(225deg);
+    z-index: 4;
   }
 }
 /* Карточки */

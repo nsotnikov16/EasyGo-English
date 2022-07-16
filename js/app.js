@@ -46,19 +46,26 @@ const swiperBanner = new Swiper('.banner .swiper', {
     loop: true,
     speed: 1000,
     autoplay: {
-        delay: 4000,
-       /*  disableOnInteraction: false */
+        delay: 5000,
+        /*  disableOnInteraction: false */
     },
     pagination: {
         el: '.banner .swiper-pagination',
         clickable: true,
-        renderBullet: function (index, className) {
+        /* renderBullet: function (index, className) {
             return '<div class="' + className + ' timer' + '">' + ` 
             <div class="timer__line"></div>
             ` +
                 '</div>';
 
-        },
+        }, */
+        renderBullet: function (index, className) {
+            return `<div class="timer ${className}">
+            <span class="timer__runner"></span>
+            <span class="timer__runner timer__runner--stay"></span>
+            <span class="timer__runner timer__runner--bg"></span>
+          </div>`
+        }
     },
     on: {
         slideChange: function () {
