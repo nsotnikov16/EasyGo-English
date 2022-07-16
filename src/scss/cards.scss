@@ -61,6 +61,24 @@
   &_teacher {
     display: block;
     padding: 65px 40px 50px 50px;
+   /*  max-height: 2000px;
+    transform: translateY(0);
+    transition: max-height 0.3s linear 0.2s, transform 0.3s linear 0.3s;
+    &.scroll-card {
+      max-height: 200px;
+      &:nth-child(2) {
+        transform: translateY(-20%);
+      }
+      > *:not(.scroll-card .card__title, .scroll-card .card__subtitle) {
+        display: none;
+      }
+    } */
+
+    @media (max-width: 900px) {
+      position: sticky;
+      overflow: hidden;
+      
+    }
     .card__title {
       font-size: 36px;
       line-height: 38px;
