@@ -69,26 +69,6 @@
     }
 
     &_close {
-      background-color: transparent;
-      position: absolute;
-      top: 38px;
-      right: 20px;
-      span {
-        background-color: #007296;
-        margin-bottom: 0;
-        transition: transform 0.25s linear;
-        &:nth-child(2) {
-          display: none;
-        }
-
-        &:nth-child(1) {
-          transform: rotate(45deg) translateX(1px);
-        }
-
-        &:nth-child(3) {
-          transform: rotate(-45deg) translateX(1px);
-        }
-      }
     }
   }
 
@@ -161,7 +141,12 @@
   }
 
   &__mobile {
-    display: none;
+    display: flex;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 0.25s linear, opacity 0.25s linear;
+    /* position: absolute;
+    height: 100vh; */
     position: fixed;
     z-index: 9999;
     top: 0;
@@ -169,27 +154,31 @@
     right: 0;
     bottom: 0;
     background-color: #006eb8;
+    padding-top: 30%;
     @media (max-width: 1024px) {
-      display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      
     }
 
     .menu {
       display: flex;
       flex-direction: column;
-
+      @media (min-width: 561px) {
+        margin-top: 45px;
+      }
       &__item {
         margin-right: 0;
         margin-bottom: 24px;
         color: white;
+        font-weight: 400;
       }
     }
 
     .phone {
       color: white;
       margin-bottom: 22px;
+      margin-top: 20px;
     }
 
     .socials {
@@ -198,6 +187,65 @@
 
     .btn {
       font-size: 24px;
+    }
+  }
+
+  &_show-mobile {
+    .header__container {
+      height: 88px;
+      @media (max-width: 560px) {
+        height: 48px;
+      }
+    }
+    .header__mobile {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    .logo {
+      filter: brightness(0) invert(1);
+      position: fixed;
+
+      z-index: 99999;
+
+      @media (max-width: 1024px) {
+        width: 180px;
+      }
+
+      @media (max-width: 560px) {
+        top: 20px;
+        left: 20px;
+        width: 100px;
+      }
+    }
+
+    .header__burger {
+      background-color: transparent;
+      position: fixed;
+      @media (max-width: 1024px) {
+        top: 40px;
+      }
+      @media (max-width: 560px) {
+        top: 20px;
+      }
+
+      z-index: 999999;
+      right: 20px;
+      span {
+        background-color: white;
+        margin-bottom: 0;
+        transition: transform 0.25s linear 0.1s;
+        &:nth-child(2) {
+          display: none;
+        }
+
+        &:nth-child(1) {
+          transform: rotate(45deg) translateX(3px);
+        }
+
+        &:nth-child(3) {
+          transform: rotate(-45deg) translateX(1px);
+        }
+      }
     }
   }
 }

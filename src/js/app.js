@@ -4,18 +4,19 @@ AOS.init();
 const header = document.querySelector('.header')
 const headerSocials = header.querySelector('.header__socials')
 const buttonSocials = header.querySelector('.header__socials a:first-child')
-buttonSocials.addEventListener('click', () => {
-    headerSocials.classList.toggle('open-list')
-})
-
-/* const setPositionHeader = () => {
+const burger = header.querySelector('.header__burger')
+const burgerPanel = document.querySelector('.panel__item')
+buttonSocials.addEventListener('click', () => headerSocials.classList.toggle('open-list'))
+burger.addEventListener('click', () => header.classList.toggle('header_show-mobile'))
+burgerPanel.addEventListener('click', () => header.classList.add('header_show-mobile'))
+const bottomPanel = document.querySelector('.panel')
+const setPositionPanel = () => {
     const scroll = Math.ceil(window.scrollY)
-    if (scroll >= 400) header.classList.add('header_fixed')
-    if (scroll < 400) header.classList.remove('header_fixed')
+    if (scroll > 560) bottomPanel.classList.remove('no-fixed')
+    if (scroll <= 560) bottomPanel.classList.add('no-fixed')
 }
-setPositionHeader()
-window.addEventListener('scroll', setPositionHeader)
- */
+setPositionPanel()
+window.addEventListener('scroll', setPositionPanel)
 
 function animateWord(block) {
     let words = block.dataset.text.split(' ')
@@ -306,7 +307,7 @@ const stories = new Stories()
 // Плавный скролл
 const anchors = [].slice.call(document.querySelectorAll('.scroll')),
     animationTime = 400,
-    framesCount = 30;
+    framesCount = 20;
 
 function scroll(item) {
     let element = document.querySelector(item.getAttribute('href'))
@@ -336,7 +337,9 @@ function scroll(item) {
 
 anchors.forEach(item => item.addEventListener('click', (e) => {
     e.preventDefault()
-    scroll(item)
+    if (item.closest('.header__mobile')) header.classList.remove('header_show-mobile')
+    setTimeout(() => scroll(item), 10)
+
 }))
 
 

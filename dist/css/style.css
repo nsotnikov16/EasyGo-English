@@ -1516,26 +1516,6 @@ body {
 .header__burger span:last-child {
   margin-bottom: 0;
 }
-.header__burger_close {
-  background-color: transparent;
-  position: absolute;
-  top: 38px;
-  right: 20px;
-}
-.header__burger_close span {
-  background-color: #007296;
-  margin-bottom: 0;
-  transition: transform 0.25s linear;
-}
-.header__burger_close span:nth-child(2) {
-  display: none;
-}
-.header__burger_close span:nth-child(1) {
-  transform: rotate(45deg) translateX(1px);
-}
-.header__burger_close span:nth-child(3) {
-  transform: rotate(-45deg) translateX(1px);
-}
 .header__right {
   display: none;
   align-items: center;
@@ -1597,7 +1577,12 @@ body {
   }
 }
 .header__mobile {
-  display: none;
+  display: flex;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.25s linear, opacity 0.25s linear;
+  /* position: absolute;
+  height: 100vh; */
   position: fixed;
   z-index: 9999;
   top: 0;
@@ -1605,33 +1590,98 @@ body {
   right: 0;
   bottom: 0;
   background-color: #006eb8;
+  padding-top: 30%;
 }
 @media (max-width: 1024px) {
   .header__mobile {
-    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
   }
 }
 .header__mobile .menu {
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 561px) {
+  .header__mobile .menu {
+    margin-top: 45px;
+  }
+}
 .header__mobile .menu__item {
   margin-right: 0;
   margin-bottom: 24px;
   color: white;
+  font-weight: 400;
 }
 .header__mobile .phone {
   color: white;
   margin-bottom: 22px;
+  margin-top: 20px;
 }
 .header__mobile .socials {
   margin-bottom: 26px;
 }
 .header__mobile .btn {
   font-size: 24px;
+}
+.header_show-mobile .header__container {
+  height: 88px;
+}
+@media (max-width: 560px) {
+  .header_show-mobile .header__container {
+    height: 48px;
+  }
+}
+.header_show-mobile .header__mobile {
+  transform: translateX(0);
+  opacity: 1;
+}
+.header_show-mobile .logo {
+  filter: brightness(0) invert(1);
+  position: fixed;
+  z-index: 99999;
+}
+@media (max-width: 1024px) {
+  .header_show-mobile .logo {
+    width: 180px;
+  }
+}
+@media (max-width: 560px) {
+  .header_show-mobile .logo {
+    top: 20px;
+    left: 20px;
+    width: 100px;
+  }
+}
+.header_show-mobile .header__burger {
+  background-color: transparent;
+  position: fixed;
+  z-index: 999999;
+  right: 20px;
+}
+@media (max-width: 1024px) {
+  .header_show-mobile .header__burger {
+    top: 40px;
+  }
+}
+@media (max-width: 560px) {
+  .header_show-mobile .header__burger {
+    top: 20px;
+  }
+}
+.header_show-mobile .header__burger span {
+  background-color: white;
+  margin-bottom: 0;
+  transition: transform 0.25s linear 0.1s;
+}
+.header_show-mobile .header__burger span:nth-child(2) {
+  display: none;
+}
+.header_show-mobile .header__burger span:nth-child(1) {
+  transform: rotate(45deg) translateX(3px);
+}
+.header_show-mobile .header__burger span:nth-child(3) {
+  transform: rotate(-45deg) translateX(1px);
 }
 
 /* Изображения */
@@ -2677,4 +2727,76 @@ body {
   .contacts__right iframe {
     border-radius: 45px;
   }
+}
+
+/* Панель нижняя */
+.panel {
+  background-color: #006eb8;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+@media (min-width: 561px) {
+  .panel {
+    display: none;
+  }
+}
+.panel.no-fixed {
+  display: none;
+}
+.panel__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  color: white;
+  align-items: stretch;
+}
+.panel__item {
+  border-right: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 5px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  line-height: 150%;
+}
+.panel__item:last-child {
+  border-right: 0;
+}
+.panel .header__burger {
+  width: 30px;
+  height: 30px;
+}
+.panel .header__burger span {
+  background-color: white;
+}
+.panel__phone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+.panel__phone svg {
+  width: 25px;
+  margin-top: 3px;
+  height: 25px;
+}
+.panel__socials a {
+  margin-right: 0;
+  background-color: #006eb8;
+  width: 35px;
+  height: 35px;
+  background-size: 80%;
+}
+.panel__socials a:not(.panel .socials a:first-child) {
+  display: none;
+}
+.panel .scroll svg {
+  width: 25px;
+  height: 21.5px;
+  margin-top: 5px;
 }

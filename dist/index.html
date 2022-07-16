@@ -15,9 +15,9 @@
 	<div class="page">
 
 		<!-- Шапка -->
-		<header class="header background-gray">
+		<header id="header" class="header background-gray">
     <div class="page__container header__container">
-        <div href="/" class="logo"></div>
+        <a href="/" class="logo"></a>
         <nav class="menu">
             <a href="#about" class="menu__item scroll">О школе</a>
             <a href="#school" class="menu__item scroll">Школьникам</a>
@@ -48,6 +48,7 @@
                 <a href="#school" class="menu__item scroll">Школьникам</a>
                 <a href="#adult" class="menu__item scroll">Взрослым</a>
                 <a href="#reviews" class="menu__item scroll">Отзывы</a>
+                <a href="#contacts" class="menu__item scroll">Контакты</a>
             </nav>
             <a href="tel:+79226569961" class="phone">+7 922 656 99 61</a>
             <div class="socials">
@@ -630,7 +631,7 @@
 </section>
 
 		<!-- Контакты -->
-		<section class="section section_contacts background-gray">
+		<section id="contacts" class="section section_contacts background-gray">
     <div class="page__container">
         <h2 class="section__title">Контакты</h2>
         <div class="contacts">
@@ -876,6 +877,43 @@
         </div>
         <button class="popup__close"><span>&#10006;</span></button>
     </div>
+</div>
+
+	<!-- Нижняя панель на мобилке -->
+	<div class="panel">
+    <ul class="panel__list">
+        <li class="panel__item">
+            <div class="header__burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <p>Меню</p>
+        </li>
+        <li class="panel__item">
+            <a href="tel:+79226569961" class="panel__phone">
+                <svg>
+                    <use href="./img/icons/icons.svg#phone"></use>
+                </svg>
+                <p>Позвонить</p>
+            </a>
+        </li>
+        <li class="panel__item">
+            <div class="socials panel__socials">
+                <a href="#" class="whatsapp"></a>
+                <a href="#" class="whatsapp"></a>
+                <a href="#" class="viber"></a>
+                <a href="#" class="telegram"></a>
+            </div>
+            <p>Написать</p>
+        </li>
+        <li href="#header" class="scroll panel__item">
+            <svg>
+                <use href="./img/icons/icons.svg#arrow"></use>
+            </svg>
+            <p>Наверх</p>
+        </li>
+    </ul>
 </div>
 
 
