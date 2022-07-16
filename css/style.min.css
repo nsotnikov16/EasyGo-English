@@ -2451,8 +2451,11 @@ body.loading > *:not(.preloader) {
 
 .media {
   margin-left: 15px;
+  display: flex;
+  flex-wrap: wrap;
 }
 .media__item {
+  flex-shrink: 0;
   margin: 15px;
   height: 400px;
   min-width: 320px;
@@ -2539,7 +2542,7 @@ body.loading > *:not(.preloader) {
 }
 .swiper-photo .swiper-wrapper,
 .swiper-video .swiper-wrapper {
-  /* width: max-content; */
+  width: max-content;
 }
 
 /* Спойлеры */

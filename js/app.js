@@ -94,14 +94,15 @@ let paramsMedia = {
     },
     on: {
         init: function () {
-            media.forEach(item => setWidthMedia(item))
+            setWidthMedia(this.wrapperEl)
         }
     }
 }
 
 function setWidthMedia(item) {
 
-    if (item.offsetHeight > 845 && window.innerWidth > 767) {
+    item.style.width = `${item.offsetWidth / 1.9}px`
+    /* if (item.offsetHeight > 845 && window.innerWidth > 767) {
         while (item.offsetHeight > 945) {
             item.style.width = `${item.offsetWidth + item.offsetWidth * 0.1}px`
         }
@@ -111,10 +112,8 @@ function setWidthMedia(item) {
         while (item.offsetHeight > 420) {
             item.style.width = `${item.offsetWidth + item.offsetWidth * 0.1}px`
         }
-    }
+    } */
 }
-
-const media = [document.querySelector('.swiper-photo .swiper-wrapper'), document.querySelector('.swiper-video .swiper-wrapper')]
 const swiperPhoto = new Swiper('.swiper-photo', paramsMedia)
 const swiperVideo = new Swiper('.swiper-video', paramsMedia)
 
