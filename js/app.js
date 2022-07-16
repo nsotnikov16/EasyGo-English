@@ -47,7 +47,7 @@ const swiperBanner = new Swiper('.banner .swiper', {
     speed: 1000,
     autoplay: {
         delay: 5000,
-         disableOnInteraction: false
+        disableOnInteraction: false
     },
     pagination: {
         el: '.banner .swiper-pagination',
@@ -62,9 +62,8 @@ const swiperBanner = new Swiper('.banner .swiper', {
     },
     on: {
         slideChange: function () {
-            const bannersSlides = document.querySelectorAll('.banner .swiper .swiper-slide')
             setTimeout(() => {
-                bannersSlides.forEach(item => {
+                this.slides.forEach(item => {
                     const title = item.querySelector('.banner__title')
                     const letters = item.querySelectorAll('.letter')
                     const subTitle = item.querySelector('.banner__subtitle')
@@ -77,6 +76,7 @@ const swiperBanner = new Swiper('.banner .swiper', {
                     }
                 })
             }, 20)
+
         },
     },
 })

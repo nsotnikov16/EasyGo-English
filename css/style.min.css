@@ -2055,8 +2055,8 @@ body.loading > *:not(.preloader) {
   transform: rotateZ(45deg);
   box-sizing: border-box;
   animation-name: timer_rotate2;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
+  animation-duration: 5.02s;
+  animation-iteration-count: steps(1, end);
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
