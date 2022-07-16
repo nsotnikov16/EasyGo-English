@@ -1,24 +1,64 @@
 /* Анимации */
 AOS.init();
 
-/* const header = document.querySelector('.header')
-const setPositionHeader = () => {
+const header = document.querySelector('.header')
+const headerSocials = header.querySelector('.header__socials')
+const buttonSocials = header.querySelector('.header__socials a:first-child')
+const burger = header.querySelector('.header__burger')
+const burgerPanel = document.querySelector('.panel__item')
+buttonSocials.addEventListener('click', () => headerSocials.classList.toggle('open-list'))
+burger.addEventListener('click', () => header.classList.toggle('header_show-mobile'))
+burgerPanel.addEventListener('click', () => header.classList.add('header_show-mobile'))
+const bottomPanel = document.querySelector('.panel')
+const setPositionPanel = () => {
     const scroll = Math.ceil(window.scrollY)
-    if (scroll >= 400) header.classList.add('header_fixed')
-    if (scroll < 400) header.classList.remove('header_fixed')
+    if (scroll > 560) bottomPanel.classList.remove('no-fixed')
+    if (scroll <= 560) bottomPanel.classList.add('no-fixed')
 }
-setPositionHeader()
-window.addEventListener('scroll', setPositionHeader) */
+setPositionPanel()
+window.addEventListener('scroll', setPositionPanel)
 
+function animateWord(block) {
+    let words = block.dataset.text.split(' ')
+    words.forEach(word => {
+        let spanWord = document.createElement('span')
+        let space = document.createElement('span')
+        space.textContent = " "
+        space.style.display = 'inline'
+        spanWord.classList.add('word')
+        block.append(spanWord)
+        block.append(space)
+
+        word.split('').forEach((letter, ind) => {
+            let spanLetter = document.createElement('span');
+            spanLetter.innerText = letter;
+            spanLetter.classList.add('letter')
+            spanWord.append(spanLetter)
+        })
+    })
+
+    const letters = block.querySelectorAll('.letter')
+    letters.forEach((letter, ind) => letter.style.cssText = `animation-delay: ${ind == 0 ? 0 : (ind / 2) / 10}s;`)
+
+}
 
 const swiperBanner = new Swiper('.banner .swiper', {
     loop: true,
+    speed: 1000,
     autoplay: {
-        delay: 3000,
+        delay: 4000,
+        disableOnInteraction: false
     },
     pagination: {
         el: '.banner .swiper-pagination',
-        clickable: true
+        clickable: true,
+        renderBullet: function (index, className) {
+            return '<div class="' + className + ' timer' + '">' + ` 
+            <div class="timer__line"></div>
+            ` +
+                '</div>';
+
+        },
     },
     on: {
         slideChange: function () {
@@ -26,16 +66,22 @@ const swiperBanner = new Swiper('.banner .swiper', {
             setTimeout(() => {
                 bannersSlides.forEach(item => {
                     const title = item.querySelector('.banner__title')
+                    const letters = item.querySelectorAll('.letter')
                     const subTitle = item.querySelector('.banner__subtitle')
-                    const signup = item.querySelector('.banner .signup')
-                    const arr = [title, subTitle, signup]
+                    const arr = [title, subTitle]
                     arr.forEach(el => el.classList.remove('aos-animate'))
-                    if (item.classList.contains('swiper-slide-active')) arr.forEach(el => el.classList.add('aos-animate'))
+                    letters.forEach(letter => letter.classList.remove('letter_animate'))
+                    if (item.classList.contains('swiper-slide-active')) {
+                        arr.forEach(el => el.classList.add('aos-animate'))
+                        letters.forEach(letter => letter.classList.add('letter_animate'))
+                    }
                 })
-            }, 50)
+            }, 20)
         },
     },
 })
+const titlesBanner = document.querySelectorAll('.banner__title');
+titlesBanner.forEach(title => animateWord(title))
 
 let paramsMedia = {
     slidesPerView: 'auto',
@@ -48,13 +94,21 @@ let paramsMedia = {
     },
     on: {
         init: function () {
-            media.forEach(item => {
-                if (item.offsetHeight > 845) {
-                    while (item.offsetHeight > 945) {
-                        item.style.width = `${item.offsetWidth + item.offsetWidth * 0.1}px`
-                    }
-                }
-            })
+            media.forEach(item => setWidthMedia(item))
+        }
+    }
+}
+
+function setWidthMedia(item) {
+    if (item.offsetHeight > 845 && window.innerWidth > 767) {
+        while (item.offsetHeight > 945) {
+            item.style.width = `${item.offsetWidth + item.offsetWidth * 0.1}px`
+        }
+    }
+
+    if (item.offsetHeight > 380 && window.innerWidth <= 767) {
+        while (item.offsetHeight > 420) {
+            item.style.width = `${item.offsetWidth + item.offsetWidth * 0.1}px`
         }
     }
 }
@@ -96,6 +150,10 @@ function tabClick(tab) {
         item.classList.remove('tabs__content_active')
         if (item.dataset.tab === tab.dataset.tab) item.classList.add('tabs__content_active')
     })
+
+    if (tab.closest('.section_media')) {
+        media.forEach(item => setWidthMedia(item))
+    }
 }
 
 
@@ -104,6 +162,7 @@ class Popup {
     constructor(popupElement) {
         this.popupElement = popupElement;
         this._closeButton = this.popupElement.querySelector('.popup__close');
+        this._img = this.popupElement.querySelector('.popup__img') ?? ''
         this._handleEscClose = this._handleEscClose.bind(this)
         this._openingLinks = document.querySelectorAll(`[data-pointer="${this.popupElement.id}"]`)
         this.setEventListeners()
@@ -113,14 +172,7 @@ class Popup {
         document.body.style.overflow = "hidden";
         this.popupElement.classList.add('popup_opened')
         document.addEventListener('keydown', this._handleEscClose);
-        if (el.tagName === 'PICTURE') {
-            const picture = this.popupElement.querySelector('picture')
-            if (picture) picture.remove()
-            const copyElement = el.cloneNode(true)
-
-            copyElement.removeAttribute('onclick')
-            this.popupElement.querySelector('.popup__content').append(copyElement)
-        }
+        if (this._img && el.src) this._img.src = el.src
     }
 
     close() {
@@ -255,7 +307,7 @@ const stories = new Stories()
 // Плавный скролл
 const anchors = [].slice.call(document.querySelectorAll('.scroll')),
     animationTime = 400,
-    framesCount = 30;
+    framesCount = 20;
 
 function scroll(item) {
     let element = document.querySelector(item.getAttribute('href'))
@@ -285,7 +337,9 @@ function scroll(item) {
 
 anchors.forEach(item => item.addEventListener('click', (e) => {
     e.preventDefault()
-    scroll(item)
+    if (item.closest('.header__mobile')) header.classList.remove('header_show-mobile')
+    setTimeout(() => scroll(item), 10)
+
 }))
 
 
@@ -305,3 +359,12 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 
+const aboutMore = document.querySelector('#about .more')
+const tooltip = document.querySelector('.tooltip')
+if (aboutMore && tooltip) {
+    aboutMore.addEventListener(isMobile ? 'click' : 'mouseenter', () => tooltip.classList.add('tooltip_show'))
+    //aboutMore.addEventListener(isMobile ? 'click' : 'mouseout', () => tooltip.classList.remove('tooltip_show'))
+    document.addEventListener(isMobile ? 'click' : 'mouseout', ({ target }) => {
+        if (target !== aboutMore && !target.closest('.tooltip')) tooltip.classList.remove('tooltip_show')
+    })
+} 
