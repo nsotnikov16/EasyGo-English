@@ -47,7 +47,7 @@ const swiperBanner = new Swiper('.banner .swiper', {
     speed: 1000,
     autoplay: {
         delay: 5000,
-        /*  disableOnInteraction: false */
+         disableOnInteraction: false
     },
     pagination: {
         el: '.banner .swiper-pagination',
