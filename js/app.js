@@ -101,7 +101,7 @@ let paramsMedia = {
 
 function setWidthMedia(item) {
 
-    item.style.width = `${item.offsetWidth / 1.9}px`
+    item.style.width = `${item.offsetWidth / 1.96}px`
     /* if (item.offsetHeight > 845 && window.innerWidth > 767) {
         while (item.offsetHeight > 945) {
             item.style.width = `${item.offsetWidth + item.offsetWidth * 0.1}px`
