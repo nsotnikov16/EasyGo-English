@@ -122,6 +122,7 @@
       background-color: #bfdbed;
       animation: mask_left 4s steps(1, end) forwards;
       opacity: 1;
+      overflow: hidden;
     }
 
     &::after {
@@ -135,6 +136,7 @@
       background-color: #006eb8;
       animation: mask_right 4s steps(1, end) forwards;
       opacity: 1;
+      overflow: hidden;
     }
     .timer__line {
       position: absolute;
@@ -145,6 +147,7 @@
       z-index: 2;
       animation: line 4s linear forwards;
       opacity: 1;
+      overflow: hidden;
 
       &::after {
         content: "";
@@ -155,6 +158,7 @@
         height: 100%;
         background-color: #006eb8;
         opacity: 1;
+        overflow: hidden;
       }
     }
   }
