@@ -1,22 +1,22 @@
 <div class="panel">
-    <ul class="panel__list">
-        <li class="panel__item">
+    <div class="panel__list">
+        <div class="panel__item">
             <div class="header__burger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
             <p>Меню</p>
-        </li>
-        <li class="panel__item">
-            <a href="tel:+79226569961" class="panel__phone">
+        </div>
+        <a href="tel:+79226569961" class="panel__item">
+            <div  class="panel__phone">
                 <svg>
                     <use href="./img/icons/icons.svg#phone"></use>
                 </svg>
                 <p>Позвонить</p>
-            </a>
-        </li>
-        <li class="panel__item">
+            </div>
+        </a>
+        <div class="panel__item">
             <div class="socials panel__socials">
                 <a href="#" class="whatsapp"></a>
                 <a href="#" class="whatsapp"></a>
@@ -24,12 +24,12 @@
                 <a href="#" class="telegram"></a>
             </div>
             <p>Написать</p>
-        </li>
-        <li href="#header" class="scroll panel__item">
+        </div>
+        <div onclick="return up()" class="panel__item">
             <svg>
                 <use href="./img/icons/icons.svg#arrow"></use>
             </svg>
             <p>Наверх</p>
-        </li>
-    </ul>
+        </div>
+    </div>
 </div>

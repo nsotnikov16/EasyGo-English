@@ -1717,27 +1717,25 @@ body.loading > *:not(.preloader) {
   align-items: center;
 }
 .header__socials {
-  margin-right: 21px;
-  position: absolute;
-  top: 40px;
-  right: 70px;
-  flex-direction: column;
-  z-index: 999;
-}
-@media (max-width: 560px) {
-  .header__socials {
-    top: 35px;
-    right: 50px;
-  }
+  margin-right: 10px;
+  /*  position: absolute;
+   top: 40px;
+   right: 70px;
+   flex-direction: column;
+   z-index: 999; */
+  /*   @media (max-width: 560px) {
+      top: 35px;
+      right: 50px;
+    } */
 }
 .header__socials a {
-  margin-right: 0;
-}
-.header__socials a:not(.header__socials a:first-child) {
-  max-height: 0;
-  visibility: hidden;
-  transition: max-height 0.35s ease-in-out;
-  margin-bottom: 10px;
+  margin-right: 10px;
+  /*  &:not(.header__socials a:first-child) {
+     max-height: 0;
+     visibility: hidden;
+     transition: max-height 0.35s ease-in-out;
+     margin-bottom: 10px;
+   } */
 }
 @media (max-width: 560px) {
   .header__socials a {
@@ -1777,8 +1775,6 @@ body.loading > *:not(.preloader) {
   transform: translateX(-100%);
   opacity: 0;
   transition: transform 0.25s linear, opacity 0.25s linear;
-  /* position: absolute;
-  height: 100vh; */
   position: fixed;
   z-index: 9999;
   top: 0;
@@ -2213,6 +2209,12 @@ body.loading > *:not(.preloader) {
     font-size: 36px;
   }
 }
+.card__title:not(.card_teacher .card__title) {
+  cursor: pointer;
+}
+.card__title:not(.card_teacher .card__title):hover {
+  color: #ff2f4e;
+}
 .card__subtitle {
   font-size: 18px;
   line-height: 150%;
@@ -2248,18 +2250,6 @@ body.loading > *:not(.preloader) {
 .card_teacher {
   display: block;
   padding: 65px 40px 50px 50px;
-  /*  max-height: 2000px;
-   transform: translateY(0);
-   transition: max-height 0.3s linear 0.2s, transform 0.3s linear 0.3s;
-   &.scroll-card {
-     max-height: 200px;
-     &:nth-child(2) {
-       transform: translateY(-20%);
-     }
-     > *:not(.scroll-card .card__title, .scroll-card .card__subtitle) {
-       display: none;
-     }
-   } */
 }
 @media (max-width: 900px) {
   .card_teacher {
@@ -2998,6 +2988,11 @@ body.loading > *:not(.preloader) {
 .panel__item:last-child {
   border-right: 0;
 }
+.panel__item:last-child svg {
+  width: 25px;
+  height: 21.5px;
+  margin-top: 5px;
+}
 .panel .header__burger {
   width: 30px;
   height: 30px;
@@ -3053,9 +3048,4 @@ body.loading > *:not(.preloader) {
 }
 .panel__socials_open a:nth-child(4) {
   top: -300% !important;
-}
-.panel .scroll svg {
-  width: 25px;
-  height: 21.5px;
-  margin-top: 5px;
 }

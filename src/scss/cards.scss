@@ -21,6 +21,13 @@
     @media (max-width: 420px) {
       font-size: 36px;
     }
+
+    &:not(.card_teacher .card__title) {
+      cursor: pointer;
+      &:hover {
+        color: #ff2f4e;
+      }
+    }
   }
 
   &__subtitle {
@@ -61,18 +68,6 @@
   &_teacher {
     display: block;
     padding: 65px 40px 50px 50px;
-   /*  max-height: 2000px;
-    transform: translateY(0);
-    transition: max-height 0.3s linear 0.2s, transform 0.3s linear 0.3s;
-    &.scroll-card {
-      max-height: 200px;
-      &:nth-child(2) {
-        transform: translateY(-20%);
-      }
-      > *:not(.scroll-card .card__title, .scroll-card .card__subtitle) {
-        display: none;
-      }
-    } */
 
     @media (max-width: 900px) {
       position: sticky;

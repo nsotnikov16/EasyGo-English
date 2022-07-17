@@ -29,6 +29,11 @@
     justify-content: space-between;
     &:last-child {
       border-right: 0;
+      svg {
+        width: 25px;
+        height: 21.5px;
+        margin-top: 5px;
+      }
     }
 
     font-size: 14px;
@@ -68,7 +73,8 @@
       &:not(.panel .socials a:first-child) {
         display: none;
       }
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         transform: scale(1);
       }
     }
@@ -104,11 +110,4 @@
     }
   }
 
-  .scroll {
-    svg {
-      width: 25px;
-      height: 21.5px;
-      margin-top: 5px;
-    }
-  }
 }

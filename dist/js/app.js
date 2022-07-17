@@ -8,7 +8,7 @@ const headerSocials = header.querySelector('.header__socials')
 const buttonSocials = header.querySelector('.header__socials a:first-child')
 const burger = header.querySelector('.header__burger')
 const burgerPanel = document.querySelector('.panel__item')
-buttonSocials.addEventListener('click', () => headerSocials.classList.toggle('open-list'))
+/* buttonSocials.addEventListener('click', () => headerSocials.classList.toggle('open-list')) */
 burger.addEventListener('click', () => header.classList.toggle('header_show-mobile'))
 burgerPanel.addEventListener('click', () => header.classList.add('header_show-mobile'))
 
@@ -21,34 +21,6 @@ const setPositionPanel = () => {
 }
 setPositionPanel()
 window.addEventListener('scroll', setPositionPanel)
-
-
-/* Скролл учителeq */
-const teachers = document.querySelectorAll('.card_teacher')
-/* if (teachers.length > 0) {
-
-    teachers.forEach(teacher => {
-        let box = teacher.getBoundingClientRect();
-        let coordinates = {
-            top: box.top + window.pageYOffset,
-            right: box.right + window.pageXOffset,
-            bottom: box.bottom + window.pageYOffset,
-            left: box.left + window.pageXOffset
-        };
-
-        window.addEventListener('scroll', () => {
-            const scroll = Math.ceil(window.scrollY)
-            let height = teacher.offsetHeight
-            if (scroll > coordinates.bottom - height / 3) {
-                teacher.classList.add('scroll-card')
-                teacher.style.maxHeight = `${bottom - top / 3}`
-            }
-            else {
-                teacher.classList.remove('scroll-card')
-            }
-        })
-    })
-} */
 
 function animateWord(block) {
     let words = block.dataset.text.split(' ')
@@ -134,17 +106,6 @@ let paramsMedia = {
 function setWidthMedia(item) {
     item.style.width = 'max-content'
     item.style.width = `${item.offsetWidth / 1.96}px`
-    /* if (item.offsetHeight > 845 && window.innerWidth > 767) {
-        while (item.offsetHeight > 945) {
-            item.style.width = `${item.offsetWidth + item.offsetWidth * 0.1}px`
-        }
-    }
-
-    if (item.offsetHeight > 380 && window.innerWidth <= 767) {
-        while (item.offsetHeight > 420) {
-            item.style.width = `${item.offsetWidth + item.offsetWidth * 0.1}px`
-        }
-    } */
 }
 const swiperPhoto = new Swiper('.swiper-photo', paramsMedia)
 const swiperVideo = new Swiper('.swiper-video', paramsMedia)
@@ -247,8 +208,6 @@ document.addEventListener('DOMContentLoaded', () => {
         arrPopups[item.id] = popup
     })
 })
-
-
 
 
 /* Сториз */
@@ -361,6 +320,7 @@ function scroll(item) {
         // если к-во пикселей для скролла за 1 такт больше расстояния до элемента
         // и дно страницы не достигнуто
         if (scrollBy > window.pageYOffset - coordY && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
+
             // то скроллим на к-во пикселей, которое соответствует одному такту
             window.scrollBy(0, scrollBy);
         } else {
@@ -377,8 +337,17 @@ anchors.forEach(item => item.addEventListener('click', (e) => {
     e.preventDefault()
     if (item.closest('.header__mobile')) header.classList.remove('header_show-mobile')
     setTimeout(() => scroll(item), 10)
-
 }))
+
+var t;
+function up() {
+    var top = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+    if (top > 0) {
+        window.scrollBy(0, -100);
+        t = setTimeout('up()', 1);
+    } else clearTimeout(t);
+    return false;
+}
 
 
 const isMobile = /Mobile|webOS|BlackBerry|IEMobile|MeeGo|mini|Fennec|Windows Phone|Android|iP(ad|od|hone)/i.test(navigator.userAgent);
@@ -392,7 +361,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener(isMobile ? 'click' : 'mousemove', (e) => {
         if (!e.target.closest('.socials_hover') && !e.target.closest('[data-socials="true"]')) messengers.classList.remove('open')
-        /*  if (!e.target.closest('.header__messengers')) inserted.classList.remove('open-list') */
     })
 })
 
@@ -401,7 +369,6 @@ const aboutMore = document.querySelector('#about .more')
 const tooltip = document.querySelector('.tooltip')
 if (aboutMore && tooltip) {
     aboutMore.addEventListener(isMobile ? 'click' : 'mouseenter', () => tooltip.classList.add('tooltip_show'))
-    //aboutMore.addEventListener(isMobile ? 'click' : 'mouseout', () => tooltip.classList.remove('tooltip_show'))
     document.addEventListener(isMobile ? 'click' : 'mouseout', ({ target }) => {
         if (target !== aboutMore && !target.closest('.tooltip')) tooltip.classList.remove('tooltip_show')
     })
@@ -415,7 +382,7 @@ if (panel) {
     links.forEach((link, index) => {
         const className = link.className
         if (index == 0) {
-            link.addEventListener('click', (e) => {
+            link.closest('.panel__item').addEventListener('click', (e) => {
                 e.preventDefault()
                 panelSocials.classList.toggle('panel__socials_open')
             })
