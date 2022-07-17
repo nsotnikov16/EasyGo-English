@@ -311,11 +311,6 @@ function scroll(item) {
     if (!element) return
     // для каждого якоря берем соответствующий ему элемент и определяем его координату Y
     let coordY = element.getBoundingClientRect().top + window.pageYOffset;
-    if (item.classList.contains('panel__item')) return window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
 
     // запускаем интервал, в котором
     let scroller = setInterval(function () {
@@ -325,6 +320,7 @@ function scroll(item) {
         // если к-во пикселей для скролла за 1 такт больше расстояния до элемента
         // и дно страницы не достигнуто
         if (scrollBy > window.pageYOffset - coordY && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
+
             // то скроллим на к-во пикселей, которое соответствует одному такту
             window.scrollBy(0, scrollBy);
         } else {
@@ -342,6 +338,16 @@ anchors.forEach(item => item.addEventListener('click', (e) => {
     if (item.closest('.header__mobile')) header.classList.remove('header_show-mobile')
     setTimeout(() => scroll(item), 10)
 }))
+
+var t;
+function up() {
+    var top = Math.max(document.body.scrollTop, document.documentElement.scrollTop);
+    if (top > 0) {
+        window.scrollBy(0, -100);
+        t = setTimeout('up()', 5);
+    } else clearTimeout(t);
+    return false;
+}
 
 
 const isMobile = /Mobile|webOS|BlackBerry|IEMobile|MeeGo|mini|Fennec|Windows Phone|Android|iP(ad|od|hone)/i.test(navigator.userAgent);
