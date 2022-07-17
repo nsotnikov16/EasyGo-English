@@ -18,7 +18,23 @@
 
 <body class="loading">
 
-
+	<!-- Прелоадер -->
+	<div class="preloader">
+    <div class="lds-default">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
 	<div class="page">
 
 		<!-- Шапка -->
@@ -38,7 +54,7 @@
 
         <div class="header__right">
             <div class="socials header__socials">
-                <a href="#" class="whatsapp"></a>
+                <!-- <a href="#" class="whatsapp"></a> -->
                 <a href="#" class="whatsapp"></a>
                 <a href="#" class="viber"></a>
                 <a href="#" class="telegram"></a>
@@ -209,7 +225,7 @@
         <ul class="cards cards_courses" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="500" data-aos-duration="900">
             <li class="card ">
                 <div class="card__top">
-                    <h3 class="card__title">Подготовка<br> к ОГЭ и ЕГЭ</h3>
+                    <h3 class="card__title" data-pointer="detail1">Подготовка<br> к ОГЭ и ЕГЭ</h3>
                     <p class="card__subtitle">Боишься экзаменов? Чувствуешь неуверенность в своих силах? Есть
                         пробелы в знаниях, а времени до экзамена все меньше?
                     </p>
@@ -230,7 +246,7 @@
             </li>
             <li class="card ">
                 <div class="card__top">
-                    <h3 class="card__title">Учимся читать <br>6 - 7 лет</h3>
+                    <h3 class="card__title" data-pointer="detail1">Учимся читать <br>6 - 7 лет</h3>
                     <p class="card__subtitle">Боишься экзаменов? Чувствуешь неуверенность в своих силах? Есть
                         пробелы в знаниях, а времени до экзамена все меньше?
                     </p>
@@ -250,7 +266,7 @@
             </li>
             <li class="card ">
                 <div class="card__top">
-                    <h3 class="card__title">Английский для младшей школы<br> 7-10 лет</h3>
+                    <h3 class="card__title" data-pointer="detail1">Английский для младшей школы<br> 7-10 лет</h3>
                     <p class="card__subtitle">Боишься экзаменов? Чувствуешь неуверенность в своих силах? Есть
                         пробелы в знаниях, а времени до экзамена все меньше?
                     </p>
@@ -270,7 +286,7 @@
             </li>
             <li class="card ">
                 <div class="card__top">
-                    <h3 class="card__title">Английский для средней школы <br>10-14 лет</h3>
+                    <h3 class="card__title" data-pointer="detail1">Английский для средней школы <br>10-14 лет</h3>
                     <p class="card__subtitle">Боишься экзаменов? Чувствуешь неуверенность в своих силах? Есть
                         пробелы в знаниях, а времени до экзамена все меньше?
                     </p>
@@ -290,7 +306,7 @@
             </li>
             <li class="card ">
                 <div class="card__top">
-                    <h3 class="card__title">Английский для старшей школы <br>10-14 лет</h3>
+                    <h3 class="card__title" data-pointer="detail1">Английский для старшей школы <br>10-14 лет</h3>
                     <p class="card__subtitle">Боишься экзаменов? Чувствуешь неуверенность в своих силах? Есть
                         пробелы в знаниях, а времени до экзамена все меньше?
                     </p>
@@ -337,7 +353,7 @@
         <ul class="cards cards_courses" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="500" data-aos-duration="900">
             <li class="card ">
                 <div class="card__top">
-                    <h3 class="card__title">Курс для родителей младших классов</h3>
+                    <h3 class="card__title" data-pointer="detail1">Курс для родителей младших классов</h3>
                     <p class="card__subtitle">Боишься экзаменов? Чувствуешь неуверенность в своих силах? Есть
                         пробелы в знаниях, а времени до экзамена все меньше?
                     </p>
@@ -358,7 +374,7 @@
             </li>
             <li class="card ">
                 <div class="card__top">
-                    <h3 class="card__title">Курс для взрослых</h3>
+                    <h3 class="card__title" data-pointer="detail1">Курс для взрослых</h3>
                     <p class="card__subtitle">Боишься экзаменов? Чувствуешь неуверенность в своих силах? Есть
                         пробелы в знаниях, а времени до экзамена все меньше?
                     </p>
@@ -378,7 +394,7 @@
             </li>
             <li class="card ">
                 <div class="card__top">
-                    <h3 class="card__title">Корпоративные курсы</h3>
+                    <h3 class="card__title" data-pointer="detail1">Корпоративные курсы</h3>
                     <p class="card__subtitle">Боишься экзаменов? Чувствуешь неуверенность в своих силах? Есть
                         пробелы в знаниях, а времени до экзамена все меньше?
                     </p>
@@ -905,24 +921,24 @@
 
 	<!-- Нижняя панель на мобилке -->
 	<div class="panel">
-    <ul class="panel__list">
-        <li class="panel__item">
+    <div class="panel__list">
+        <div class="panel__item">
             <div class="header__burger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
             <p>Меню</p>
-        </li>
-        <li class="panel__item">
-            <a href="tel:+79226569961" class="panel__phone">
+        </div>
+        <a href="tel:+79226569961" class="panel__item">
+            <div  class="panel__phone">
                 <svg>
                     <use href="./img/icons/icons.svg#phone"></use>
                 </svg>
                 <p>Позвонить</p>
-            </a>
-        </li>
-        <li class="panel__item">
+            </div>
+        </a>
+        <div class="panel__item">
             <div class="socials panel__socials">
                 <a href="#" class="whatsapp"></a>
                 <a href="#" class="whatsapp"></a>
@@ -930,33 +946,17 @@
                 <a href="#" class="telegram"></a>
             </div>
             <p>Написать</p>
-        </li>
-        <li href="#header" class="scroll panel__item">
+        </div>
+        <div href="#header" class="scroll panel__item">
             <svg>
                 <use href="./img/icons/icons.svg#arrow"></use>
             </svg>
             <p>Наверх</p>
-        </li>
-    </ul>
-</div>
-
-	<!-- Прелоадер -->
-	<div class="preloader">
-    <div class="lds-default">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        </div>
     </div>
 </div>
+
+
 
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
