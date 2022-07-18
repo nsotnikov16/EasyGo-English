@@ -1,3 +1,55 @@
+// Социальные сети
+// main - основные ссылки
+// teachers - учителя
+// В вёрстке нигде менять не надо, JS сам все сделает!
+const socials = {
+    main: {
+        whatsapp: 'https://wa.clck.bar/79226569961',
+        viber: 'https://vibr.cc/79226569961',
+        telegram: 'https://t.me/'
+    },
+    teachers: {
+        madina: {
+            whatsapp: 'https://wa.clck.bar/79226569961',
+            viber: 'https://vibr.cc/79226569961',
+            telegram: 'https://t.me/'
+        },
+        ksenia: {
+            whatsapp: 'https://wa.clck.bar/79128114695',
+            viber: 'https://vibr.cc/79128114695',
+            telegram: 'https://t.me/'
+        }
+    }
+}
+
+const socialsBlocks = document.querySelectorAll('.socials')
+if (socialsBlocks.length > 0) {
+    
+    function appendItem(item, appendBlock) {
+        const link = document.createElement('a')
+        link.classList.add(item[0])
+        link.href = item[1]
+        link.setAttribute('target', '_blank')
+        appendBlock.append(link)
+    }
+
+    socialsBlocks.forEach(social => {
+        const isTeacher = social.parentNode.closest('.contacts__teacher') ? true : false
+        const teacherName = isTeacher ? social.parentNode.querySelector('.contacts__teacher-name').textContent : ''
+        const appendBlock = social.querySelector('.socials__container') ?? social
+
+        if (teacherName) {
+            if (teacherName === 'Ксения') {
+                Object.entries(socials.teachers.ksenia).forEach(item => appendItem(item, appendBlock))
+            } else if (teacherName == 'Мадина') {
+                Object.entries(socials.teachers.madina).forEach(item => appendItem(item, appendBlock))
+            }
+        } else {
+            Object.entries(socials.main).forEach(item => appendItem(item, appendBlock))
+        }
+
+    })
+}
 
 /* Анимации */
 AOS.init();

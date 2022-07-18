@@ -9,7 +9,14 @@
     top: 56px;
     right: 508px;
     border-radius: 50%;
+
     @media (max-width: 1580px) {
+      right: 255px;
+      top: 5%;
+      max-width: 300px;
+    }
+
+    @media (max-width: 1360px) {
       top: 50px;
       right: -35px;
       max-width: 250px;
@@ -40,7 +47,14 @@
   &__boy {
     bottom: 50px;
     right: 255px;
+
     @media (max-width: 1580px) {
+      right: 20px;
+      top: 40%;
+      max-width: 250px;
+    }
+
+    @media (max-width: 1360px) {
       right: -35px;
       max-width: 200px;
       bottom: initial;
@@ -56,8 +70,13 @@
   &__bird-blue {
     top: 24px;
     right: 520px;
-
     @media (max-width: 1580px) {
+      right: 298px;
+      top: 2%;
+      max-width: 160px;
+    }
+
+    @media (max-width: 1360px) {
       right: -25px;
       max-width: 170px;
       top: 25px;
@@ -75,6 +94,12 @@
     bottom: 285px;
 
     @media (max-width: 1580px) {
+      right: 210px;
+      max-width: 120px;
+      bottom: 260px;
+    }
+
+    @media (max-width: 1360px) {
       right: -30px;
       max-width: 120px;
       bottom: 260px;
@@ -101,11 +126,16 @@
     bottom: 320px;
 
     @media (max-width: 1580px) {
-      right: -22px;
+      right: 50px;
 
       max-width: 90px;
       bottom: 70px;
     }
+
+    @media (max-width: 1360px) {
+      right: -22px;
+    }
+
     @media (max-width: 1579px) {
       bottom: calc(25px + (55 + 55 * 0.7) * ((100vw - 820px) / 1579));
     }

@@ -1891,6 +1891,13 @@ body.loading > *:not(.preloader) {
 }
 @media (max-width: 1580px) {
   .images__girl {
+    right: 255px;
+    top: 5%;
+    max-width: 300px;
+  }
+}
+@media (max-width: 1360px) {
+  .images__girl {
     top: 50px;
     right: -35px;
     max-width: 250px;
@@ -1922,6 +1929,13 @@ body.loading > *:not(.preloader) {
 }
 @media (max-width: 1580px) {
   .images__boy {
+    right: 20px;
+    top: 40%;
+    max-width: 250px;
+  }
+}
+@media (max-width: 1360px) {
+  .images__boy {
     right: -35px;
     max-width: 200px;
     bottom: initial;
@@ -1940,6 +1954,13 @@ body.loading > *:not(.preloader) {
 }
 @media (max-width: 1580px) {
   .images__bird-blue {
+    right: 298px;
+    top: 2%;
+    max-width: 160px;
+  }
+}
+@media (max-width: 1360px) {
+  .images__bird-blue {
     right: -25px;
     max-width: 170px;
     top: 25px;
@@ -1957,6 +1978,13 @@ body.loading > *:not(.preloader) {
   bottom: 285px;
 }
 @media (max-width: 1580px) {
+  .images__bird-red {
+    right: 210px;
+    max-width: 120px;
+    bottom: 260px;
+  }
+}
+@media (max-width: 1360px) {
   .images__bird-red {
     right: -30px;
     max-width: 120px;
@@ -1987,9 +2015,14 @@ body.loading > *:not(.preloader) {
 }
 @media (max-width: 1580px) {
   .images__bird-blue-right {
-    right: -22px;
+    right: 50px;
     max-width: 90px;
     bottom: 70px;
+  }
+}
+@media (max-width: 1360px) {
+  .images__bird-blue-right {
+    right: -22px;
   }
 }
 @media (max-width: 1579px) {
