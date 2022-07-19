@@ -89,7 +89,9 @@ setPositionPanel()
 window.addEventListener('scroll', setPositionPanel)
 
 function animateWord(block) {
-    let words = block.dataset.text.split(' ')
+    let words = block.textContent.split(' ')
+    block.textContent = ''
+
     words.forEach(word => {
         let spanWord = document.createElement('span')
         let space = document.createElement('span')
@@ -466,4 +468,8 @@ if (panel) {
 window.onload = () => {
     document.body.classList.remove('loading')
     swiperBanner.slideToLoop(0, 500, false)
+    document.querySelectorAll('.images img').forEach(img => {
+        img.classList.remove('aos-animate')
+        img.classList.add('aos-animate')
+    })
 }
