@@ -12,7 +12,7 @@ export const js = () => {
 			mode: app.isBuild ? 'production' : 'development',
 			output: {
 				filename: 'app.js',
-			}
+			},
 		})) */
 		.pipe(app.gulp.dest(app.path.build.js))
 		.pipe(app.plugins.browsersync.stream());
